@@ -1,0 +1,30 @@
+- name: Napkins
+  image: napkins.png
+- name: Multi-Purpose Bathroom Cleaner
+  image: bathroom-cleaner.png
+- name: Dishwashing Detergent
+  image: dishwashing-detergent.png
+- name: Dishwashing Liquid
+  image: dishwashing-liquid.png
+- name: Glass Cleaner
+  image: glass-cleaner.png
+- name: Hand Soap
+  image: hand-soap.png
+- name: Paper Plates
+  image: paper-plates.png
+- name: Paper Towels
+  image: paper-towels.png
+- name: Trash Bags
+  image: trash-bags.png
+- name: Multi-Purpose Kitchen Cleaner
+  image: kitchen-cleaner.png
+- name: Multi-Surface Floor Cleaner
+  image: floor-cleaner.png
+- name: Shower Cleaner
+  image: shower-cleaner.png
+- name: Stainless Cleaner
+  image: stainless-cleaner.png
+- name: Tile Grout Cleaner
+  image: tile-grout-cleaner.png
+- name: Toilet Bowl Cleaner
+  image: toilet-cleaner.png

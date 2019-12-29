@@ -1,0 +1,12 @@
+packages:
+  - name: $29.99 - 3 Products
+  - name: $39.99 - 4 Products
+  - name: $49.99 - 5 Products
+  - name: $59.99 - 6 Products
+  - name: $69.99 - 7 Products
+  - name: $79.99 - 8 Products
+  - name: $89.99 - 9 Products
+
+frequencies:
+  - name: Monthly
+  - name: Bi-Weekly

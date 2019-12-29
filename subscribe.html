@@ -1,0 +1,59 @@
+---
+layout: default
+---
+<div id="subscription-page" class="container text-center">
+  <section>
+    <h5>Select your subscription Plan</h5>
+    <div class="card text-center mx-auto p-5 my-5">
+      <div class="card-bod">
+          <div class="form-group">
+            <label for="select-package">Package</label>
+            <select class="form-control" id="select-package">
+              {% for package in site.data.plan.packages %}
+                <option>{{package.name}}</option>
+              {% endfor %}
+              
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="select-freq">Example select</label>
+            <select class="form-control" id="select-freq">
+              {% for frequency in site.data.plan.frequencies %}
+                <option>{{frequency.name}}</option>
+              {% endfor %}
+            </select>
+          </div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <h5>Select your choice of product</h5>
+    <div class="container d-flex align-items-center flex-wrap">
+        {% for product in site.data.products %}
+        <ul class="check-card">
+          <li class="card check-card-item">
+            <input type="checkbox" id="check{{forloop.index}}" name="check" value="1">
+            <label for="check{{forloop.index}}" class="radio"></label>
+            <!-- <div class="check-card-bg"></div> -->
+            <div class="check-card-body">
+              <div class="check-card-toggle">
+                <span></span>
+                <span></span>
+              </div>
+              <div class="check-card-body-in">
+                <img src="assets/products/{{product.image}}" width="100px">
+                <p class="check-card-description mt-2">
+                  {{product.name}}
+                </p>
+              </div>
+            </div>
+          </li>
+          
+        </ul>
+        {% endfor %}
+    </div>
+  </section>
+  <section>
+    <h1>asd</h1>
+  </section>
+</div>
