@@ -54,6 +54,28 @@ layout: default
     </div>
   </section>
   <section>
-    <h1>asd</h1>
+    <h5>Pick the city and pillar that you would like to support</h5>
+    <div class="card text-center mx-auto p-5 my-5">
+        <div class="card-bod">
+            <div class="form-group">
+              <label for="select-package">Legacy Impact City</label>
+              <select class="form-control" id="select-package">
+                {% for city in site.data.cities %}
+                  <option>{{city.name}}</option>
+                {% endfor %}
+                
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="select-freq">Pillar</label>
+              <select class="form-control" id="select-freq">
+                {% for pillar in site.data.pillars %}
+                  <option>{{pillar.name}}</option>
+                {% endfor %}
+              </select>
+            </div>
+        </div>
+      </div>
   </section>
+  <button id="subscribe-btn" class="btn-hover color-11 mb-5 mt-0" onclick="window.location.href = 'login.html';" >SUBSCRIBE</button>
 </div>
