@@ -1,19 +1,35 @@
 ---
 layout: default
 ---
-<div id="login-page" class="text-center mt-5">
-  <h1>Login</h1>
+<div id="login-page" class="mt-5">
+  <h1 class="text-center">Login</h1>
   <div class="form">
     <form class="register-form">
-      <input type="text" placeholder="Email"/>
-      <input type="password" placeholder="Password"/>
-      <input type="password" placeholder="Confirm Password"/>
+      <div class="form-group">
+        <label for="exampleInputEmail1" class="bmd-label-floating">Email address</label>
+        <input type="email" class="form-control" id="exampleInputEmail1">
+        <span class="bmd-help">We'll never share your email with anyone else.</span>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1" class="bmd-label-floating">Password</label>
+        <input type="password" class="form-control" id="exampleInputPassword1">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword2" class="bmd-label-floating">Confirm Password</label>
+        <input type="password" class="form-control" id="exampleInputPassword2">
+      </div>
       <button>create</button>
       <p class="message">Already registered? <a href="#">Sign In</a></p>
     </form>
     <form class="login-form">
-      <input type="text" placeholder="Email"/>
-      <input type="password" placeholder="Password"/>
+      <div class="form-group">
+        <label for="exampleInputEmail1" class="bmd-label-floating">Email address</label>
+        <input type="email" class="form-control" id="exampleInputEmail1">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1" class="bmd-label-floating">Password</label>
+        <input type="password" class="form-control" id="exampleInputPassword1">
+      </div>
       <button>login</button>
       <p class="message">Not registered? <a href="#">Create an account</a></p>
     </form>
