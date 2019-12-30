@@ -28,7 +28,9 @@ body {
 }
 
 #subscribe-btn {
-  width: 350px;
+  max-width: 350px;
+  min-width: 250px;
+  width: 50%;
 }
 
 .btn-hover {
