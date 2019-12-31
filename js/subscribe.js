@@ -83,6 +83,12 @@ function stripeTokenHandler(token) {
   const products = $("#products input:checked").map(function() {return $(this).attr('value')}).get();
   const city = $("#select-city option:selected").val()
   const pillar = $("#select-pillar option:selected").val()
+  const address = {
+    street: $("input#addressStreet").val(),
+    city: $("input#addressCity").val(),
+    zip: $("input#addressZip").val(),
+    state: $("input#addressState").val(),
+  }
 
   const user = firebase.auth().currentUser;
 
@@ -95,7 +101,8 @@ function stripeTokenHandler(token) {
         quantity,
         products,
         city,
-        pillar
+        pillar,
+        address
       }).then(function(result) {
         // Redirect if success
         window.location.replace('thankyou.html')
