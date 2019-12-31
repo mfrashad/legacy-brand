@@ -2,38 +2,30 @@
 layout: default
 ---
 <div id="subscription-page" class="container text-center">
-  <form>
+  <form action="/charge" method="post" id="payment-form">
   <section>
     <h5>Select your subscription Plan</h5>
-    <div class="card text-center mx-auto p-5 my-5">
-      <div class="card-bod">
+    <div class="card text-center mx-auto p-3 my-5">
+      <div class="card-body">
           <div class="form-group">
             <label for="select-package">Package</label>
             <select class="form-control" id="select-package">
               {% for package in site.data.plan.packages %}
-                <option>{{package.name}}</option>
+                <option value="{{package.quantity}}">{{package.name}}</option>
               {% endfor %}
               
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="select-freq">Example select</label>
-            <select class="form-control" id="select-freq">
-              {% for frequency in site.data.plan.frequencies %}
-                <option>{{frequency.name}}</option>
-              {% endfor %}
             </select>
           </div>
       </div>
     </div>
   </section>
-  <section>
+  <section id="products">
     <h5>Select your choice of product</h5>
     <div class="container d-flex align-items-center flex-wrap">
         {% for product in site.data.products %}
         <ul class="check-card">
           <li class="card check-card-item">
-            <input type="checkbox" id="check{{forloop.index}}" name="check" value="1">
+            <input type="checkbox" id="check{{forloop.index}}" name="check" value="{{product.name}}">
             <label for="check{{forloop.index}}" class="radio"></label>
             <!-- <div class="check-card-bg"></div> -->
             <div class="check-card-body">
@@ -56,20 +48,20 @@ layout: default
   </section>
   <section>
     <h5>Pick the city and pillar that you would like to support</h5>
-    <div class="card text-center mx-auto p-5 my-5">
-        <div class="card-bod">
+    <div class="card text-center mx-auto p-3 my-5">
+        <div class="card-body">
             <div class="form-group">
               <label for="select-package">Legacy Impact City</label>
-              <select class="form-control" id="select-package">
+              <select class="form-control" id="select-city">
                 {% for city in site.data.cities %}
-                  <option>{{city.name}}</option>
+                  <option value="{{city.name}}">{{city.name}}</option>
                 {% endfor %}
                 
               </select>
             </div>
             <div class="form-group">
               <label for="select-freq">Pillar</label>
-              <select class="form-control" id="select-freq">
+              <select class="form-control" id="select-pillar">
                 {% for pillar in site.data.pillars %}
                   <option>{{pillar.name}}</option>
                 {% endfor %}
@@ -78,8 +70,28 @@ layout: default
         </div>
       </div>
   </section>
-  <button id="subscribe-btn" class="btn-hover color-11 mb-5 mt-0" onclick="window.location.href = 'login.html';" >SUBSCRIBE</button>
+  <section>
+      <h5>Add Your Payment Method</h5>
+      <div class="card text-center mx-auto p-3 my-5">
+        <div class="card-body">  
+          <div class="form-row">
+            <label for="card-element">
+              Credit or debit card
+            </label>
+            <div id="card-element" class="form-control">
+              <!-- A Stripe Element will be inserted here. -->
+            </div>
+        
+            <!-- Used to display form errors. -->
+            <div id="card-errors" role="alert"></div>
+          </div>
+        </div>
+      </div>
+      
+  </section>
+  <button id="subscribe-btn" class="btn-hover color-11 mb-5 mt-0" >SUBSCRIBE</button>
   </form>
 </div>
 
+<script src="https://js.stripe.com/v3/"></script>
 <script src="js/subscribe.js"></script>

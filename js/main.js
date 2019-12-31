@@ -1,3 +1,5 @@
+const db = firebase.firestore()
+
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     console.log('Signed in')
@@ -12,7 +14,7 @@ firebase.auth().onAuthStateChanged(function(user) {
     // ...
     $("#auth-btn").text("Login").click(e => window.location.replace("login.html"))
   }
-});
+})
 
 $('.alert button').click(function() { $(".alert").hide()})
 

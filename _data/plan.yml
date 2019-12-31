@@ -1,11 +1,18 @@
 packages:
   - name: $29.99 - 3 Products
+    quantity: 3
   - name: $39.99 - 4 Products
+    quantity: 4
   - name: $49.99 - 5 Products
+    quantity: 5
   - name: $59.99 - 6 Products
+    quantity: 6
   - name: $69.99 - 7 Products
+    quantity: 7
   - name: $79.99 - 8 Products
+    quantity: 8
   - name: $89.99 - 9 Products
+    quantity: 9
 
 frequencies:
   - name: Monthly
