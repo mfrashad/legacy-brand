@@ -1,7 +1,15 @@
 // Set your publishable key: remember to change this to your live publishable key in production
 // See your keys here: https://dashboard.stripe.com/account/apikeys
+
+$('#products input[type="checkbox"]').on('click', function(e) {
+  debugger
+  if($('#products input[type="checkbox"]:checked').length > parseInt($("#select-package option:selected").val())) {
+    $(this).prop('checked', false);
+  }
+});
+
+
 const stripe = Stripe('pk_test_vwY33uSQEAm18eCK6JoTvjKX00cFlWEqFZ');
-// Create a Stripe client.
 
 firebase.auth().onAuthStateChanged(user => {
   if (user) {
