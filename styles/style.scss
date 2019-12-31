@@ -27,12 +27,6 @@ body {
   margin-bottom: 100px;
 }
 
-#subscribe-btn {
-  max-width: 350px;
-  min-width: 250px;
-  width: 50%;
-}
-
 .btn-hover {
   width: 200px;
   font-size: 16px;
@@ -63,8 +57,12 @@ body {
 .btn-hover:focus {
   outline: none;
 }
-.btn-hover.color-11 {
+.btn-hover.green {
      background-image: linear-gradient(to right, #AED453,#049A61, #65BB59, #049A61);  box-shadow: 0 5px 15px rgba(242, 97, 103, .4);
+}
+
+.btn-hover.red {
+  background-image: linear-gradient(to right, #e7772c,#c0392b, #e45f3e, #af3022);  box-shadow: 0 5px 15px rgba(242, 97, 103, .4);
 }
 
 
@@ -137,6 +135,12 @@ body {
   .card {
     border-radius: 1.5rem;
     max-width: 600px;
+  }
+
+  .btn-hover {
+    max-width: 350px;
+    min-width: 250px;
+    width: 50%;
   }
 
   .check-card {

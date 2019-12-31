@@ -70,34 +70,34 @@ layout: default
         </div>
       </div>
   </section>
-  <section>
+  <section id="address">
     <h5 class="text-center">Enter Your Address</h5>
     <div class="card mx-auto p-3 my-5">
       <div class="card-body">
         <div class="form-row">
           <div class="form-group col-sm-12">
-            <label for="addressStreet" class="bmd-label-floating">Street address</label>
+            <label for="addressStreet" class="bmd-label-static">Street address</label>
             <input type="text" class="form-control" id="addressStreet" required>
           </div>
         </div>
         <div class="form-row">
           <div class="form-group col-sm-4">
-          <label for="addressCity" class="bmd-label-floating">City</label>
+          <label for="addressCity" class="bmd-label-static">City</label>
           <input type="text" class="form-control" id="addressCity">
         </div>
         <div class="form-group col-sm-4">
-          <label for="addressZip" class="bmd-label-floating">Zip</label>
+          <label for="addressZip" class="bmd-label-static">Zip</label>
           <input type="text" class="form-control" id="addressZip">
         </div>
         <div class="form-group col-sm-4">
-          <label for="addressState" class="bmd-label-floating">State</label>
+          <label for="addressState" class="bmd-label-static">State</label>
           <input type="text" class="form-control" id="addressState">
         </div>
         </div>
       </div>
     </div>
   </section>
-  <section>
+  <section id="payment" style="display: none;">
     <h5 class="text-center">Add Your Payment Method</h5>
     <div class="card text-center mx-auto p-3 my-5">
       <div class="card-body">  
@@ -115,8 +115,12 @@ layout: default
       </div>
     </div>
   </section>
-  <div class="text-center">
-    <button id="subscribe-btn" class="btn-hover color-11 mb-5 mt-0" >SUBSCRIBE</button>
+  <div id="subscribeDiv" class="text-center" style="display: none;">
+    <button id="subscribeButton" class="btn-hover green mb-5 mt-0" >SUBSCRIBE</button>
+  </div>
+  <div id="updateDiv" class="text-center" style="display: none;">
+    <button id="cancelButton" type="button" class="btn-hover red mb-5 mt-0" >CANCEL SUBSCRIPTION</button>
+    <button id="updateButton" type="submit" class="btn-hover green mb-5 mt-0" >UPDATE</button>
   </div>
   </form>
 </div>

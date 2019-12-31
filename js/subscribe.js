@@ -8,13 +8,18 @@ firebase.auth().onAuthStateChanged(user => {
     console.log(user.uid);
     const ref = db.collection("stripe_customers").doc(user.uid)
     ref.get().then(function(doc){
-      if(doc.exists) {
-        const data = doc.data();
-        const {quantity, products, city, pillar, address, subscription} = data;
+      const data = doc.data();
+      const {quantity, products, city, pillar, address, subscription} = data;
+      if(subscription) {        
         autofill(quantity, products, city, pillar, address, subscription);
-        createCard(stripe);
+        $("#updateDiv").show();
+        setupUpdateButton();
+        setupCancelButton();
+
       } else {
         console.log("subscription doesnt exist")
+        $("#subscribeDiv").show();
+        createCard(stripe);
       }
     })
     .catch(function(error){ toast(error.message) })
@@ -24,6 +29,7 @@ firebase.auth().onAuthStateChanged(user => {
 });
 
 function createCard(stripe){
+  $("#payment").show();
   // Create an instance of Elements.
   var elements = stripe.elements();
 
@@ -70,6 +76,29 @@ function createCard(stripe){
   });
 }
 
+function setupUpdateButton(){
+  var form = document.getElementById('payment-form');
+  form.addEventListener('submit', async event => {
+    event.preventDefault();
+    const updateSubscription = firebase.functions().httpsCallable('updateSubscription');
+    const { quantity, products, city, pillar, address } = getFormValue();
+    updateSubscription({quantity,products,city,pillar,address})
+      .then(result => location.reload())
+      .catch(error => toast(error.message));
+  });
+}
+
+function setupCancelButton() {
+  var button = document.getElementById('cancelButton');
+  button.addEventListener('click', async event => {
+    event.preventDefault();
+    const cancelSubscription = firebase.functions().httpsCallable('cancelSubscription');
+    cancelSubscription()
+      .then(result => location.reload())
+      .catch(error => toast(error.message));
+  });
+}
+
 // Save token to firestore
 function stripeTokenHandler(token) {
   const user = firebase.auth().currentUser;
@@ -79,7 +108,7 @@ function stripeTokenHandler(token) {
       const subscribe = firebase.functions().httpsCallable('subscribe');
       const { quantity, products, city, pillar, address } = getFormValue();
       subscribe({token: token.id,quantity,products,city,pillar,address})
-        .then(result => window.location.replace('thankyou.html'))
+        .then(result => location.replace('thankyou.html'))
         .catch(error => toast(error.message));
     })
 }
