@@ -18,5 +18,11 @@ firebase.auth().onAuthStateChanged(function(user) {
 
 $('.alert button').click(function() { $(".alert").hide()})
 
+function toast(message) {
+  console.log(message)
+  $('.alert p').text(message)
+  $('.alert').show()
+}
+
 
 
