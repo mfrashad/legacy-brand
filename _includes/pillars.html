@@ -1,0 +1,30 @@
+<section id="pillars" class="container-fluid ">
+  <div class="row justify-content-center text-center align-items-center ">
+    <div class="col-12 col-md-8 text-center">
+      <h1 class="my-auto">Let's Review The 7 Pillars</h1>
+    </div>
+    {% for pillar in site.data.pillars %}
+    <div class="col-12 col-md-4">
+      <div class="card mx-auto my-3">
+        <img class="card-img-top mx-auto" src="assets/pillars/{{pillar.image}}" alt="Icon">
+        <div class="card-body">
+          <h6 class="card-title">{{pillar.name}}</h6>
+          <p class="card-text">{{pillar.desc}}</p>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section >
+<section id="commitment" class="container-fluid">
+  <div class="row align-items-center">
+    <div class="col-12 col-md-6 text-center">
+      <img class="mb-3 w-75" src="assets/commitment.svg">
+    </div>
+    <div class="col-12 col-md-6">
+      <h4 class="my-3"><strong>What’s Next? Are You Ready? We Need A Commitment From You!</strong></h4>
+      <p>We will launch the full online selling/buying platform in Spring 2020 but for a limited time you can sign up for a subscription to purchase OUR OWN line of household products, Legacy Brands. (You can eliminate the first paragraph and replace it with this)</p>
+      <p>We are so excited to announce that we have formulated and are introducing to the world  our VERY OWN line of household products that you can purchase monthly. These are items that you use purchase monthly from the other guys that refuse to assist in rebuilding our community.</p>
+    </div>
+  </div>
+</section >

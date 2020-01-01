@@ -49,77 +49,9 @@ layout: default
     <h3><strong>ARE YOU READY TO MAKE IMPACT IN OUR COMMUNITY?</strong></h3>
     <p>With each dollar that you spend, 15% of the total spend will be allocated to our sister Non-Profit Inspiring America. Inspiring America, a registered 501C3 will hold all monies, easily tracked by you and direct the monies to the 7 Economic Pillars needed to restore our 26 Inner Cities</p>
 </section >
-<section id="pillars" class="container-fluid ">
-  <div class="row justify-content-center text-center">
-    <div class="col-12 col-md-8 text-center">
-      <h1 class="my-auto m-5 p-5">Let's Review The 7 Pillars</h1>
-    </div>
-    {% for pillar in site.data.pillars %}
-    <div class="col-12 col-md-4">
-      <div class="card mx-auto my-3" style="width: 18rem;">
-        <img class="card-img-top mx-auto mt-3" src="assets/pillars/{{pillar.image}}" alt="Icon">
-        <div class="card-body">
-          <h6 class="card-title">{{pillar.name}}</h6>
-          <p class="card-text">{{pillar.desc}}</p>
-        </div>
-      </div>
-    </div>
-    {% endfor %}
-  </div>
-</section >
-<section id="commitment" class="container-fluid">
-  <div class="row align-items-center">
-    <div class="col-12 col-md-6 text-center">
-      <img class="mb-3 w-75" src="assets/commitment.svg">
-    </div>
-    <div class="col-12 col-md-6">
-      <h4 class="my-3"><strong>What’s Next? Are You Ready? We Need A Commitment From You!</strong></h4>
-      <p>We will launch the full online selling/buying platform in Spring 2020 but for a limited time you can sign up for a subscription to purchase OUR OWN line of household products, Legacy Brands. (You can eliminate the first paragraph and replace it with this)</p>
-      <p>We are so excited to announce that we have formulated and are introducing to the world  our VERY OWN line of household products that you can purchase monthly. These are items that you use purchase monthly from the other guys that refuse to assist in rebuilding our community.</p>
-    </div>
-  </div>
-</section >
 
-<section id="steps">
-  <!-- <img src="assets/steps.svg" class="w-100"> -->
-  <h2 class="text-center"><strong>HOW IT WORKS</strong></h2>
-  <div class="row align-items-center">
-    <div class="col-12 col-md-6 order-md-2">
-      <img class="mb-3  pr-5 w-100" src="assets/step1-img.svg">
-    </div>
-    <div class="col-12 col-md-6 order-md-1 pl-5 mb-5">
-        <h3><strong>Step 1</strong></h3>
-      <h4>Login or register on our website</h4>
-    </div>
-  </div>
-  <div class="row align-items-center">
-    <div class="col-12 col-md-6 order-md-1">
-      <img class="mb-3  pr-5 w-100" src="assets/step4-img.svg">
-    </div>
-    <div class="col-12 col-md-6 order-md-2 pl-5 mb-5">
-        <h3><strong>Step 2</strong></h3>
-      <h4>Pick a subscription package type and the frequency.</h4>
-    </div>
-  </div>
-  <div class="row align-items-center">
-    <div class="col-12 col-md-6 order-md-2">
-      <img class="mb-3  pr-5 w-100" src="assets/step3-img.svg">
-    </div>
-    <div class="col-12 col-md-6 order-md-1 pl-5 mb-5">
-        <h3><strong>Step 3</strong></h3>
-      <h4>Review the list of household products that you want the most.</h4>
-    </div>
-  </div>
-  <div class="row align-items-center">
-    <div class="col-12 col-md-6 order-md-1">
-      <img class="mb-3  pr-5 w-100" src="assets/step4-img.svg">
-    </div>
-    <div class="col-12 col-md-6 order-md-2 pl-5 mb-5">
-      <h3><strong>Step 4</strong></h3>
-      <h4>Pick the city and pillar that you would like to support</h4>
-    </div>
-  </div>
-</section>
+{% include pillars.html %}
+{% include steps.html %}
 </div>
 <div class="button-container-fluid text-center">
     <button id="subscribe-btn" class="btn-hover green" onclick="window.location.href = 'login.html';" >REGISTER TO SUBSCRIBE</button>

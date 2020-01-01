@@ -15,77 +15,92 @@ body {
 #home {
   padding: 0;
   section {
+    padding: 20px;
     margin-bottom: 50px;
   }
+}
 
-  #banner {
 
-    h1 {
-      margin-left: 10px;
-      margin-top: calc(40vh + 30px);
-      margin-bottom: 100px;
-    }
 
-    img {
-      z-index: -1;
-      position: absolute;
-      top: 0;
-      right: 0;
-      height: 40vh;
-    }
+#banner {
+  h1 {
+    margin-left: 10px;
+    margin-top: calc(40vh + 30px);
+    margin-bottom: 100px;
   }
-
-  #what {
-    img {
-      width: 80vw;
-    }
+  img {
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 40vh;
   }
+}
 
-  #impact {
-    width: 100%;
-    color: white;
-    margin: 0;
-    background-color: #4CAF50;
+#what {
+  img {
+    width: 80vw;
   }
+}
 
-  #pillars {
-    img {
-      width: 100px;
-    }
+#impact {
+  width: 100%;
+  color: white;
+  margin: 0;
+  background-color: #4CAF50;
+  font-size: 1.5rem;
+}
+
+#pillars {
+  .card {
+    width: 350px;
+    font-size: 0.8rem;
+    height: 450px;
+    padding-top: 40px;
+  }
+  img {
+    width: 100px;
+  }
+}
+
+#steps {
+  img {
+    opacity: 80%;
   }
 }
 
 
 @media only screen and (min-width: 576px) {
-  #home {
-    #banner {
-      img {
-        height:60vh;
-      }
+  #banner {
+    img {
+      height:60vh;
     }
   }
 }
 
 @media only screen and (min-width: 768px) {
-  #home {
-    #banner {
-      height: 100vh;
-      h1{
-        margin-left: 20px;
-        font-size: 3.5em;
-      }
-      img {
-        height: 90vh;
-      }
+  #banner {
+    height: 100vh;
+    h1{
+      margin-left: 20px;
+      font-size: 3.5em;
     }
-
-    #what {
-      img {
-        width: 100%;
-      }
+    img {
+      height: 90vh;
     }
   }
+
+  #what {
+    img {
+      width: 100%;
+    }
+  }
+
+  #pillars {
+    
+  }
 }
+
 
 
 #auth-btn {
