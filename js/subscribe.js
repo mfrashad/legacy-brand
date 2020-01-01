@@ -2,7 +2,6 @@
 // See your keys here: https://dashboard.stripe.com/account/apikeys
 
 $('#products input[type="checkbox"]').on('click', function(e) {
-  debugger
   if($('#products input[type="checkbox"]:checked').length > parseInt($("#select-package option:selected").val())) {
     $(this).prop('checked', false);
   }
