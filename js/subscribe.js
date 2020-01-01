@@ -16,9 +16,9 @@ firebase.auth().onAuthStateChanged(user => {
     const ref = db.collection("stripe_customers").doc(user.uid)
     ref.get().then(function(doc){
       const data = doc.data();
-      const {quantity, products, city, pillar, address, subscription} = data;
+      const { subscription } = data;
       if(subscription) {        
-        autofill(quantity, products, city, pillar, address, subscription);
+        autofill(data);
         $("#updateDiv").show();
         setupUpdateButton();
         setupCancelButton();
@@ -90,8 +90,8 @@ function setupUpdateButton(){
     event.preventDefault();
     loading("#updateButton");
     const updateSubscription = firebase.functions().httpsCallable('updateSubscription');
-    const { quantity, products, city, pillar, address } = getFormValue();
-    updateSubscription({quantity,products,city,pillar,address})
+    const data = getFormValue();
+    updateSubscription(data)
       .then(result => location.reload())
       .catch(error => toast(error.message));
   });
@@ -116,8 +116,8 @@ function stripeTokenHandler(token) {
   userRef.collection("tokens").add({token: token.id})
     .then(() => {
       const subscribe = firebase.functions().httpsCallable('subscribe');
-      const { quantity, products, city, pillar, address } = getFormValue();
-      subscribe({token: token.id,quantity,products,city,pillar,address})
+      const data = getFormValue();
+      subscribe({token: token.id, ...data})
         .then(result => location.replace('thankyou.html'))
         .catch(error => toast(error.message));
     })
@@ -128,6 +128,8 @@ function getFormValue() {
   const products = $("#products input:checked").map(function() {return $(this).attr('value')}).get();
   const city = $("#select-city option:selected").val()
   const pillar = $("#select-pillar option:selected").val()
+  const name = $("input#fullName").val()
+  const phone = $("input#phoneNumber").val()
   const address = {
     street: $("input#addressStreet").val(),
     city: $("input#addressCity").val(),
@@ -135,10 +137,11 @@ function getFormValue() {
     state: $("input#addressState").val(),
   }
 
-  return { quantity, products, city, pillar, address };
+  return { quantity, products, city, pillar, name, phone, address };
 }
 
-function autofill(quantity, products, city, pillar, address) {
+function autofill(data) {
+  const { quantity, products, city, pillar, name, phone, address } = data;
   $(`#select-package option[value=${quantity}]`).attr("selected", "selected");
   $(`#select-city option[value='${city}']`).attr("selected", "selected");
   $(`#select-pillar option[value='${pillar}']`).attr("selected", "selected");
@@ -146,6 +149,8 @@ function autofill(quantity, products, city, pillar, address) {
   for(x of products) {
     $(`#products input[value='${x}'`).prop("checked", true);
   }
+  $("input#fullName").val(name);
+  $("input#phoneNumber").val(phone);
   $("input#addressStreet").val(address.street);
   $("input#addressCity").val(address.city);
   $("input#addressZip").val(address.zip);
