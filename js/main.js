@@ -1,3 +1,5 @@
+AOS.init({duration: 500, delay: 300});
+
 const db = firebase.firestore()
 
 firebase.auth().onAuthStateChanged(function(user) {

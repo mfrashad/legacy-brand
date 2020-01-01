@@ -55,8 +55,8 @@ body {
   .card {
     width: 350px;
     font-size: 0.8rem;
-    height: 450px;
-    padding-top: 40px;
+    height: 100%;
+    padding: 30px 0;
   }
   img {
     width: 100px;
@@ -97,7 +97,9 @@ body {
   }
 
   #pillars {
-    
+    .card {
+      height: 450px;
+    }
   }
 }
 
