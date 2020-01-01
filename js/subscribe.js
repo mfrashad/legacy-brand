@@ -58,7 +58,7 @@ function createCard(stripe){
       iconColor: '#fa755a'
     }
   };
-  var card = elements.create('card', {style: style});
+  var card = elements.create('card', {hidePostalCode: true, style: style});
   card.mount('#card-element');
   card.addEventListener('change', event => {
     var displayError = document.getElementById('card-errors');
