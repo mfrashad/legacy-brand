@@ -25,5 +25,9 @@ function toast(message) {
   $('.alert').show()
 }
 
+function loading(element){
+  $(element).html("<img src='assets/loading-white.svg' width='30px'>");
+}
+
 
 

@@ -72,6 +72,7 @@ function createCard(stripe){
   var form = document.getElementById('payment-form');
   form.addEventListener('submit', event => {
     event.preventDefault();
+    loading("#subscribeButton");
     stripe.createToken(card).then(result => {
       if (result.error) {
         var errorElement = document.getElementById('card-errors');
@@ -87,6 +88,7 @@ function setupUpdateButton(){
   var form = document.getElementById('payment-form');
   form.addEventListener('submit', async event => {
     event.preventDefault();
+    loading("#updateButton");
     const updateSubscription = firebase.functions().httpsCallable('updateSubscription');
     const { quantity, products, city, pillar, address } = getFormValue();
     updateSubscription({quantity,products,city,pillar,address})
@@ -99,6 +101,7 @@ function setupCancelButton() {
   var button = document.getElementById('cancelButton');
   button.addEventListener('click', async event => {
     event.preventDefault();
+    loading("#cancelButton");
     const cancelSubscription = firebase.functions().httpsCallable('cancelSubscription');
     cancelSubscription()
       .then(result => location.reload())

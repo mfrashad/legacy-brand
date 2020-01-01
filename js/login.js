@@ -19,37 +19,36 @@ $('.register-form #registerButton').on('click', e => {
   const email = $('#registerEmail').val()
   const password = $("#registerPassword").val()
   const confirmPassword = $("#registerConfirmPassword").val()
+  loading("#registerButton");
+  const register = firebase.functions().httpsCallable('register');
 
-  var user = firebase.auth().currentUser;
-
-  firebase.auth().createUserWithEmailAndPassword(email, password)
-  .then(function(){window.location.replace('subscribe.html')})
+  register({email, password})
+  .then((user) => {
+    firebase.auth().signInWithEmailAndPassword(email, password)
+    .then(() => location.replace('subscribe.html'));
+  })
   .catch(error => {
     // Handle Errors here.
-    var errorCode = error.code
-    var errorMessage = error.message
-    console.log(errorMessage)
-    $('.alert p').text(errorMessage)
-    $('.alert').show()
-    // ...
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    toast(errorMessage);
   });
 
 })
 
 $('.login-form #loginButton').on('click', e => {
   e.preventDefault()
-  const email = $('#loginEmail').val()
-  const password = $("#loginPassword").val()
+  const email = $('#loginEmail').val();
+  const password = $("#loginPassword").val();
+  loading("#loginButton");
 
   firebase.auth().signInWithEmailAndPassword(email, password)
   .then(function(){window.location.replace('subscribe.html')})
   .catch(error => {
     // Handle Errors here.
-    var errorCode = error.code
-    var errorMessage = error.message
-    console.log(errorMessage)
-    $('.alert p').text(errorMessage)
-    $('.alert').show()
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    toast(errorMessage);
     
     
     // ...
