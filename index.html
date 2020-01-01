@@ -45,7 +45,7 @@ layout: default
     </div>
   </div>
 </section >
-<section id="impact" class="container-fluid text-center p-4">
+<section id="impact" class="container-fluid text-center p-5 ">
     <h3><strong>ARE YOU READY TO MAKE IMPACT IN OUR COMMUNITY?</strong></h3>
     <p>With each dollar that you spend, 15% of the total spend will be allocated to our sister Non-Profit Inspiring America. Inspiring America, a registered 501C3 will hold all monies, easily tracked by you and direct the monies to the 7 Economic Pillars needed to restore our 26 Inner Cities</p>
 </section >
@@ -57,7 +57,7 @@ layout: default
     {% for pillar in site.data.pillars %}
     <div class="col-12 col-md-4">
       <div class="card mx-auto my-3" style="width: 18rem;">
-        <img class="card-img-top" src="assets/pillars/{{pillar.image}}" alt="Icon">
+        <img class="card-img-top mx-auto mt-3" src="assets/pillars/{{pillar.image}}" alt="Icon">
         <div class="card-body">
           <h6 class="card-title">{{pillar.name}}</h6>
           <p class="card-text">{{pillar.desc}}</p>
@@ -67,6 +67,21 @@ layout: default
     {% endfor %}
   </div>
 </section >
+<section id="commitment" class="container-fluid">
+  <div class="row align-items-center">
+    <div class="col-12 col-md-6">
+      <img class="mb-3  pr-5 w-100" src="assets/commitment.svg">
+    </div>
+    <div class="col-12 col-md-6">
+      <h4 class="my-3"><strong>What’s Next? Are You Ready? We Need A Commitment From You!</strong></h4>
+      <p>We will launch the full online selling/buying platform in Spring 2020 but for a limited time you can sign up for a subscription to purchase OUR OWN line of household products, Legacy Brands. (You can eliminate the first paragraph and replace it with this)</p>
+      <p>We are so excited to announce that we have formulated and are introducing to the world  our VERY OWN line of household products that you can purchase monthly. These are items that you use purchase monthly from the other guys that refuse to assist in rebuilding our community.</p>
+    </div>
+  </div>
+</section >
+<section id="steps">
+  <img src="assets/steps.svg" class="w-100">
+</section>
 </div>
 <div class="button-container-fluid text-center">
     <button id="subscribe-btn" class="btn-hover green" onclick="window.location.href = 'login.html';" >REGISTER TO SUBSCRIBE</button>
