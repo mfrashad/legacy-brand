@@ -22,10 +22,11 @@ firebase.auth().onAuthStateChanged(user => {
         $("#updateDiv").show();
         setupUpdateButton();
         setupCancelButton();
-
+        updateText();
       } else {
         console.log("subscription doesnt exist")
         $("#subscribeDiv").show();
+        
         createCard(stripe);
       }
     })
@@ -155,4 +156,11 @@ function autofill(data) {
   $("input#addressCity").val(address.city);
   $("input#addressZip").val(address.zip);
   $("input#addressState").val(address.state);
+}
+
+function updateText(){
+  $("#plan h5").text("My Subscription Plan");
+  $("#products h5").text("My Choice of Products")
+  $("#details h5").text("My Details");
+  $("#city h5").text("Legacy Impact City and Pillar Choices")
 }

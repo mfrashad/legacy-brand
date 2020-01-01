@@ -3,7 +3,7 @@ layout: default
 ---
 <div id="subscription-page" class="container">
   <form action="/charge" method="post" id="payment-form">
-  <section>
+  <section id="plan">
     <h5 class="text-center">Select your subscription Plan</h5>
     <div class="card text-center mx-auto p-3 my-5">
       <div class="card-body">
@@ -46,7 +46,7 @@ layout: default
         {% endfor %}
     </div>
   </section>
-  <section>
+  <section id="city">
     <h5 class="text-center">Pick the city and pillar that you would like to support</h5>
     <div class="card text-center mx-auto p-3 my-5">
         <div class="card-body">
@@ -70,7 +70,7 @@ layout: default
         </div>
       </div>
   </section>
-  <section id="address">
+  <section id="details">
     <h5 class="text-center">Enter Your Details</h5>
     <div class="card mx-auto p-3 my-5">
       <div class="card-body">
