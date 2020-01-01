@@ -1,7 +1,21 @@
-- name: Lecacy Tech & Community Center
+- name: Legacy Tech & Community Center
+  desc: We need to provide an alternative to the traditional college setting for our men and women. In order to break the cycle of dependence our people need additional education above GEDs and high school diplomas.This center is the epicenter of our campus. We will certify our people in technical and medical trades so that they can earn a living wage. The center will also serve as the HUB for our community by providing before and after school programs, STEM learning, community kitchens and closets.
+  image:
 - name: Legacy Markets
+  desc: We have nothing is we do not control the food we consume. We can no longer allow others to determine the selection, quality and price of what we consume. When you select this pillar, you will direct your monies to support building our larger supermarkets and our corner stores.
+  image:
 - name: Legacy Educational Fund
+  desc: We can, must and will provide educational support to all those in our community that are interested in eligible in pursuing higher education. A portion of the fund will also support our treasured Historically Black Colleges and Institutions.
+  image:
 - name: Legacy M&D
+  desc: "Another important epicenter of our community is our Manufacturing & Distribution Centers. In order for us to become self sufficient we must enter the global market place by providing  our own goods and services both nationally and internationally. We will not only employ those that manufacture and distribute our products but we will also create jobs in the following verticals: Call Center, Engineering, Quality Assurance and Warehousing."
+  image:
 - name: Legacy Careers
+  desc: We must ensure each member of our community is given a proper career, vocational, and educational advice to match passions and skills to a suitable career. We will provide job matching and staffing assistance to our members.
+  image:
 - name: Legacy Capital
+  desc: The barrier of entry for entrepreneurism of our community is too high for us to enter. We either do not have the credit, capital, resources, direction or mentors to help us become successful business owners. Legacy Capital will provide the resources needed to prepare our aspiring entrepreneurs for their dreams to come to fruition.
+  image:
 - name: Legacy Properties
+  desc: We will reclaim and rebuild our inner cities. We will replace abandoned residential and commercial properties and replace them with revitalized business parks, commercial, industrial and mixed used developments.
+  image:

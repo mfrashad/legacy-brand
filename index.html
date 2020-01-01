@@ -4,7 +4,70 @@
 
 layout: default
 ---
-<img src="assets/home.svg" width="100%" style="font-family: 'Montserrat', sans-serif;">
-<div class="button-container">
-    <button id="subscribe-btn" class="btn-hover green" onclick="window.location.href = 'login.html';" >REGISTER TO SUBSCRIBE</button>
+<div id="home" class="container-fluid m-0">
+<section id="banner">
+    <img src="assets/home-background.svg">
+    <h1>Welcome to <br> <strong>Legacy Brands</strong></h1>  
+  
+</section>
+<section id="what" class="container-fluid">
+  <div class="row align-items-center">
+    <div class="col-12 col-md-6">
+      <img class="mb-3" src="assets/what-img.svg">
+    </div>
+    <div class="col-12 col-md-6 pl-4">
+      <h4 class="my-3"><strong>What is Legacy Brands?</strong></h4>
+      <p>Legacy Brands is OUR online products and services platform dedicated to rebuilding our inner cities. Once you register you can become a customer and buy products or services, OR you can become a vendor and sell your products or services.</p>
+    </div>
+  </div>
+</section >
+<section id="how" class="container-fluid">
+  <div class="row align-items-center">
+    <div class="col-12 col-md-6 order-md-2">
+      <img class="mb-3 w-75" src="assets/how-img.svg">
+    </div>
+    <div class="col-12 col-md-6 order-md-1 pl-4">
+      <h4 class="my-3"><strong>How does it work?</strong></h4>
+      <p>You can direct Fifteen percent (15%) of every purchase to be directed to the Inner City and Economic Pillar that you desire!</p>
+    </div>
+  </div>
+</section >
+<section id="mission" class="container-fluid">
+  <div class="row align-items-center">
+    <div class="col-12 col-md-6">
+      <img class="mb-3  pr-5 w-100" src="assets/mission-img.svg">
+    </div>
+    <div class="col-12 col-md-6">
+      <h4 class="my-3"><strong>Our Mission</strong></h4>
+      <p>We have the belief system that the key to our future is that of self reliance and economic independence. We must rebuild our communities to ensure that our children are afforded all of the opportunities of other communities, we must join together and redirect our spending. By making Legacy Brands your conscious purchase you are ensuring that your dollar recirculates in our community and is used to further our cause, Rebuilding Our Community, one purchase at a time.</p>
+      <hr>
+      <p>Spring 2020 we will launch our very own online platform where you can become a customer, seller, service provider or both! After we launch, you will be able to download the Legacy App on your phone and purchase items or services from OUR platform instead the others guys.</p>
+    </div>
+  </div>
+</section >
+<section id="impact" class="container-fluid text-center p-4">
+    <h3><strong>ARE YOU READY TO MAKE IMPACT IN OUR COMMUNITY?</strong></h3>
+    <p>With each dollar that you spend, 15% of the total spend will be allocated to our sister Non-Profit Inspiring America. Inspiring America, a registered 501C3 will hold all monies, easily tracked by you and direct the monies to the 7 Economic Pillars needed to restore our 26 Inner Cities</p>
+</section >
+<section id="pillars" class="container-fluid ">
+  <div class="row justify-content-center text-center">
+    <div class="col-12 col-md-8 text-center">
+      <h1 class="my-auto m-5 p-5">Let's Review The 7 Pillars</h1>
+    </div>
+    {% for pillar in site.data.pillars %}
+    <div class="col-12 col-md-4">
+      <div class="card mx-auto my-3" style="width: 18rem;">
+        <img class="card-img-top" src="assets/pillars/{{pillar.image}}" alt="Icon">
+        <div class="card-body">
+          <h6 class="card-title">{{pillar.name}}</h6>
+          <p class="card-text">{{pillar.desc}}</p>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section >
 </div>
+<!-- <div class="button-container-fluid">
+    <button id="subscribe-btn" class="btn-hover green" onclick="window.location.href = 'login.html';" >REGISTER TO SUBSCRIBE</button>
+</div> -->
