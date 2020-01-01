@@ -56,6 +56,8 @@ body {
 }
 
 #pillars {
+  background-size: contain;
+  background-repeat: no-repeat;
   .card {
     width: 350px;
     font-size: 0.8rem;
