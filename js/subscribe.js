@@ -16,13 +16,13 @@ firebase.auth().onAuthStateChanged(user => {
     const ref = db.collection("stripe_customers").doc(user.uid)
     ref.get().then(function(doc){
       const data = doc.data();
-      const { subscription } = data;
+      const { subscription, name } = data;
       if(subscription) {        
         autofill(data);
         $("#updateDiv").show();
         setupUpdateButton();
         setupCancelButton();
-        updateText();
+        updateText(name);
       } else {
         console.log("subscription doesnt exist")
         $("#subscribeDiv").show();
@@ -158,7 +158,8 @@ function autofill(data) {
   $("input#addressState").val(address.state);
 }
 
-function updateText(){
+function updateText(name){
+  $("#welcomeText").text(`${name}'s Dashboard`);
   $("#plan h5").text("My Subscription Plan");
   $("#products h5").text("My Choice of Products")
   $("#details h5").text("My Details");
