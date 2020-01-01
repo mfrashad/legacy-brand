@@ -48,7 +48,7 @@ body {
   color: white;
   margin: 0;
   background-color: #4CAF50;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 
 #pillars {
@@ -79,6 +79,12 @@ body {
 }
 
 @media only screen and (min-width: 768px) {
+  #home {
+    section {
+      padding: 20px 80px;
+    }
+  }
+
   #banner {
     height: 100vh;
     h1{
@@ -90,6 +96,11 @@ body {
     }
   }
 
+  #impact {
+    font-size: 1.5rem;
+  }
+  
+
   #what {
     img {
       width: 100%;
@@ -99,6 +110,14 @@ body {
   #pillars {
     .card {
       height: 450px;
+    }
+  }
+}
+
+@media only screen and (min-width: 1368px) {
+  #home {
+    section {
+      padding: 20px 120px;
     }
   }
 }
