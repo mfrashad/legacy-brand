@@ -1,13 +1,13 @@
-- name: Legacy Tech & Community Center
+- name: Legacy Technical & Community Center
   desc: We need to provide an alternative to the traditional college setting for our men and women. In order to break the cycle of dependence our people need additional education above GEDs and high school diplomas.This center is the epicenter of our campus. We will certify our people in technical and medical trades so that they can earn a living wage. The center will also serve as the HUB for our community by providing before and after school programs, STEM learning, community kitchens and closets.
   image: ltc-icon.svg
-- name: Legacy Markets
+- name: Legacy Markets & Bodegas
   desc: We have nothing is we do not control the food we consume. We can no longer allow others to determine the selection, quality and price of what we consume. When you select this pillar, you will direct your monies to support building our larger supermarkets and our corner stores.
   image: restaurant.svg
 - name: Legacy Educational Fund
   desc: We can, must and will provide educational support to all those in our community that are interested in eligible in pursuing higher education. A portion of the fund will also support our treasured Historically Black Colleges and Institutions.
   image: school.svg
-- name: Legacy M&D
+- name: Legacy Manufacturing & Distribution
   desc: "Another important epicenter of our community is our Manufacturing & Distribution Centers. In order for us to become self sufficient we must enter the global market place by providing  our own goods and services both nationally and internationally. We will not only employ those that manufacture and distribute our products but we will also create jobs in the following verticals: Call Center, Engineering, Quality Assurance and Warehousing."
   image: factory.svg
 - name: Legacy Careers
