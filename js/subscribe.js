@@ -7,6 +7,10 @@ $('#products input[type="checkbox"]').on('click', function(e) {
   }
 });
 
+$("#select-package").on('change', function(e){
+  $('#products input[type="checkbox"]').prop('checked', false);
+})
+
 
 const stripe = Stripe('pk_test_vwY33uSQEAm18eCK6JoTvjKX00cFlWEqFZ');
 
