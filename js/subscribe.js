@@ -93,7 +93,7 @@ function setupUpdateButton(){
     const updateSubscription = firebase.functions().httpsCallable('updateSubscription');
     const data = getFormValue();
     updateSubscription(data)
-      .then(result => location.reload())
+      .then(result => reload('Subscription updated successfully'))
       .catch(error => toast(error.message));
   });
 }
@@ -105,7 +105,7 @@ function setupCancelButton() {
     loading("#cancelButton");
     const cancelSubscription = firebase.functions().httpsCallable('cancelSubscription');
     cancelSubscription()
-      .then(result => location.reload())
+      .then(result => reload('Subscription cancelled successfullly'))
       .catch(error => toast(error.message));
   });
 }

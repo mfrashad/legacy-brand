@@ -20,14 +20,24 @@ firebase.auth().onAuthStateChanged(function(user) {
 
 $('.alert button').click(function() { $(".alert").hide()})
 
-function toast(message) {
+const notice = new URLSearchParams(window.location.search).get('notice');
+if(notice){
+  toast(notice, 'alert-primary')
+}
+
+function toast(message, type = "alert-warning") {
   $('.alert p').text(message)
-  $('.alert').show()
+  $('.alert').removeClass('alert-primary alert-warning').addClass(type).show()
 }
 
 function loading(element){
   $(element).html("<img src='assets/loading-white.svg' width='30px'>");
 }
 
+function reload(message){
+  var url = new URL(window.location.href);
+  url.searchParams.set('notice', message);
+  window.location.href = url.href;
+}
 
 
