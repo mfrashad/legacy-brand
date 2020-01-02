@@ -1,5 +1,6 @@
 // Set your publishable key: remember to change this to your live publishable key in production
 // See your keys here: https://dashboard.stripe.com/account/apikeys
+const db = firebase.firestore()
 
 $('#products input[type="checkbox"]').on('click', function(e) {
   if($('#products input[type="checkbox"]:checked').length > parseInt($("#select-package option:selected").val())) {

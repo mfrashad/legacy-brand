@@ -10,24 +10,29 @@
 
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U" crossorigin="anonymous"></script>
-  <script asyncn src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9" crossorigin="anonymous"></script>
-  <script async src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>$(document).ready(function() { $('body').bootstrapMaterialDesign(); });</script>
   <!-- The core Firebase JS SDK is always required and must be listed first -->
-  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  
+  
+  
   <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-app.js"></script>
   <script src="js/firebase-config.js"></script>  
-  <!-- TODO: Add SDKs for Firebase products that you want to use
-       https://firebase.google.com/docs/web/setup#available-libraries -->
-  <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-functions.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-firestore.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-analytics.js"></script>  
+  
+
+  {% if page.name != "index.html" %}
+    <script src="https://apis.google.com/js/platform.js"></script>  
+    <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-functions.js"></script>
+  {% endif %}
 </head>
 <body>
 <a href="/">
   <img srcset="assets/logo-color.jpg 81w, assets/logo-color@2x.jpg 161w" 
-        sizes="(max-width: 600px) 100vw, 100vw"
+        sizes="(max-width: 600px) 50px,50px"
         src="assets/logo-color.jpg" class="logo">
 </a>
 <button id="auth-btn" class="btn btn-outline-dark"></button>
