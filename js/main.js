@@ -7,7 +7,7 @@ firebase.auth().onAuthStateChanged(function(user) {
       firebase.auth().signOut()
       window.location.replace("login.html")
     })
-    $("#subscribeButton").text("VIEW DASHBOARD").click(e => window.location.replace("subscribe.html"))
+    $("#main #subscribeButton").text("VIEW DASHBOARD").click(e => window.location.replace("subscribe.html"))
     // ...
   } else {
     // User is signed out.
