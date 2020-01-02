@@ -183,7 +183,9 @@ body {
 }
 
 
-#login-page .form {
+#loginPage, #registerPage { 
+
+.form {
   position: relative;
   z-index: 1;
   background: #FFFFFF;
@@ -234,10 +236,15 @@ body {
       text-decoration: none;
     }
   }
+}
+}
 
-  .register-form {
-    display: none;
-  }
+#loginPage .register-form {
+  display: none;
+}
+
+#registerPage .login-form {
+  display: none;
 }
 
 #subscription-page {

@@ -14,7 +14,7 @@ firebase.auth().onAuthStateChanged(function(user) {
   }
 });
 
-$('.register-form #registerButton').on('click', e => {
+$('.register-form').on('submit', e => {
   e.preventDefault()
   const email = $('#registerEmail').val()
   const password = $("#registerPassword").val()
@@ -36,7 +36,7 @@ $('.register-form #registerButton').on('click', e => {
 
 })
 
-$('.login-form #loginButton').on('click', e => {
+$('.login-form').on('submit', e => {
   e.preventDefault()
   const email = $('#loginEmail').val();
   const password = $("#loginPassword").val();

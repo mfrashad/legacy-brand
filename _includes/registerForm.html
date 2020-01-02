@@ -1,0 +1,18 @@
+<form class="register-form" oninput='pass2.setCustomValidity(pass2.value != pass.value ? "Passwords do not match." : "")'>
+  <div class="form-group">
+    <label for="registerEmail" class="bmd-label-floating">Email address</label>
+    <input type="email" class="form-control" id="registerEmail" required>
+    <span class="bmd-help">We'll never share your email with anyone else.</span>
+  </div>
+  <div class="form-group">
+    <label for="registerPassword" class="bmd-label-floating">Password</label>
+    <input type="password" class="form-control" id="registerPassword" name="pass" required>
+  </div>
+  <div class="form-group">
+    <label for="registerConfirmPassword" class="bmd-label-floating">Confirm Password</label>
+    <input type="password" class="form-control" id="registerConfirmPassword" name="pass2">
+  </div>
+  <button id="registerButton">create</button>
+  <button type="button" id="googleButton" class="outline">Login with Google</button>
+  <p class="message">Already registered? <a href="#">Sign In</a></p>
+</form>
