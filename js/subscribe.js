@@ -40,6 +40,14 @@ firebase.auth().onAuthStateChanged(user => {
   }
 });
 
+function validateForm(){
+  const checked = $('#products input[type="checkbox"]:checked').length;
+  const quantity = parseInt($("#select-package option:selected").val())
+  if( checked !== quantity ) {
+    toast(`Please select ${quantity} products for this package, or change to another package.`);
+  }
+}
+
 function createCard(stripe){
   $("#payment").show();
   // Create an instance of Elements.
