@@ -24,15 +24,15 @@ firebase.auth().onAuthStateChanged(user => {
       const { subscription, name } = data;
       if(subscription) {        
         autofill(data);
+        $("input#email").val(user.email)
         $("#updateDiv").show();
         setupUpdateButton();
         setupCancelButton();
+        fillCard();
         updateText(name);
       } else {
         console.log("subscription doesnt exist")
-        $("#subscribeDiv").show();
-        
-        createCard(stripe);
+        window.location.replace('subscribe.html')
       }
     })
     .catch(function(error){ toast(error.message) })
@@ -51,61 +51,16 @@ function validateForm(){
   return true;
 }
 
-function createCard(stripe){
-  $("#payment").show();
-  // Create an instance of Elements.
-  var elements = stripe.elements();
-
-  // Custom styling can be passed to options when creating an Element.
-  // (Note that this demo uses a wider set of styles than the guide below.)
-  var style = {
-    base: {
-      color: '#32325d',
-      fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
-      fontSmoothing: 'antialiased',
-      fontSize: '16px',
-      '::placeholder': {
-        color: '#aab7c4'
-      }
-    },
-    invalid: {
-      color: '#fa755a',
-      iconColor: '#fa755a'
-    }
-  };
-  var card = elements.create('card', {hidePostalCode: true, style: style});
-  card.mount('#card-element');
-  card.addEventListener('change', event => {
-    var displayError = document.getElementById('card-errors');
-    if (event.error) {
-      displayError.textContent = event.error.message;
-    } else {
-      displayError.textContent = '';
-    }
-  });
-
-  // Handle form submission.
-  var form = document.getElementById('payment-form');
-  form.addEventListener('submit', event => {
-    event.preventDefault();
-    if(!validateForm()) return;
-    loading("#subscribeButton");
-    const {name, address} = getFormValue();
-    stripe.createToken(card, {
-      name,
-      address_line1: address.street,
-      address_city: address.city,
-      address_state: address.state,
-      address_zip: address.zip,
-    }).then(result => {
-      if (result.error) {
-        var errorElement = document.getElementById('card-errors');
-        errorElement.textContent = result.error.message;
-      } else {
-        stripeTokenHandler(result.token);
-      }
-    });
-  });
+function fillCard(){
+  const getCard = firebase.functions().httpsCallable('getCard');
+  getCard()
+  .then(card => {
+    const { last4, exp_month, exp_year, name} = card;
+    $("#payment .number").text(`xxxx-xxxx-xxxx-${last4}`);
+    $("#payment .card-expiration-date").text(`${exp_month}/${exp_year.substring(2,4)}`)
+    $("#payment .card-holder").text(name);
+  })
+  .catch(error => toast(error.message));
 }
 
 function setupUpdateButton(){
@@ -154,6 +109,7 @@ function getFormValue() {
   const city = $("#select-city option:selected").val()
   const pillar = $("#select-pillar option:selected").val()
   const name = $("input#fullName").val()
+  //const email = $("input#email").val()
   const phone = $("input#phoneNumber").val()
   const address = {
     street: $("input#addressStreet").val(),
@@ -167,12 +123,12 @@ function getFormValue() {
 
 function autofill(data) {
   const { quantity, products, city, pillar, name, phone, address } = data;
-  $(`#select-package option[value=${quantity}]`).attr("selected", "selected");
-  $(`#select-city option[value='${city}']`).attr("selected", "selected");
-  $(`#select-pillar option[value='${pillar}']`).attr("selected", "selected");
+  $("input#package").val(`$${quantity - 1}9.99 - ${quantity} Products`);
+  $("input#legacyCity").val(city);
+  $("input#pillar").val(pillar);
   let x;
   for(x of products) {
-    $(`#products input[value='${x}'`).prop("checked", true);
+    $(`ul[title='${x}']`).show();
   }
   $("input#fullName").val(name);
   $("input#phoneNumber").val(phone);
