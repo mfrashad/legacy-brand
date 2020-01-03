@@ -76,6 +76,12 @@ body {
   }
 }
 
+#subscription-page #billing .card {
+  width: 100%;
+  max-width: 1200px;
+  white-space: nowrap;
+}
+
 
 @media only screen and (min-width: 576px) {
   #banner {

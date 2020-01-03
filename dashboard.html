@@ -2,7 +2,7 @@
 layout: default
 ---
 <div id="subscription-page" class="container">
-  <h3 id="welcomeText"" class="text-center text-capitalize"></h3>
+  <h3 id="welcomeText" class="text-center text-capitalize"></h3>
   <section id="plan" class="mt-3">
     <h5 class="text-center">My Subscription Plan</h5>
     <div class="card mx-auto p-3 my-3">
@@ -92,6 +92,9 @@ layout: default
         </ul>
         {% endfor %}
     </div>
+  </section>
+  <section id="billing">
+    {% include billing.html %}
   </section>
   <div id="updateDiv" class="text-center" style="display: none;">
     <p class="text-muted">You can only edit your subscription between 1st - 7th day of the month</p>

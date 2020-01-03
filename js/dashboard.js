@@ -28,6 +28,7 @@ firebase.auth().onAuthStateChanged(user => {
         $("#updateDiv").show();
         setupCancelButton();
         fillCard();
+        getInvoices();
         updateText(name);
       } else {
         console.log("subscription doesnt exist")
@@ -55,12 +56,20 @@ function fillCard(){
   getCard()
   .then(card => {
     const { last4, exp_month, exp_year, name} = card.data;
-    debugger
     $("#cardNumber").text(`XXXX XXXX XXXX ${last4}`);
     $("#cardExp").text(`${exp_month < 10 ?"0" + exp_month : exp_month}/${exp_year.toString().substring(2,4)}`)
     $("#cardName").text(name);
   })
   .catch(error => toast(error.message));
+}
+
+function getInvoices(){
+  const getInvoices = firebase.functions().httpsCallable('getInvoices');
+  getInvoices()
+   .then(invoices => {
+     fillInvoices(invoices.data.data);
+   })
+   .catch(error => toast(error.message));
 }
 
 function setupCancelButton() {
@@ -130,4 +139,29 @@ function updateText(name){
   $("#products h5").text("My Choice of Products")
   $("#details h5").text("My Details");
   $("#city h5").text("Legacy Impact City and Pillar Choices")
+}
+
+function fillInvoices(invoices){
+  let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+  let total_contribution = 0;
+  for (i of invoices) {
+    const d = new Date(i.created * 1000);
+    const date = `${d.getDate()} ${months[d.getMonth()]} ${d.getFullYear()}`;
+    const total = i.total / 100;
+    const contribution = total * 0.15;
+    total_contribution += contribution;
+    const { city, pillar } = i.metadata;
+    $("tbody").append(`
+      <tr>
+        <td scope="row">${date}</td>
+        <td>$${total}</td>
+        <td>$${contribution.toFixed(2)}</td>
+        <td>${city}</td>
+        <td>${pillar}</td>
+        <td><a href="${i.hosted_invoice_url}" target="_blank">View</a></td>
+        <td><a href="${i.invoice_pdf}" target="_blank">Download</a></td>
+      </tr>
+    `)
+  }
+  $("#contribution").text(`Total Contributed: $${total_contribution.toFixed(2)}`)
 }
