@@ -25,7 +25,7 @@ $('.register-form').on('submit', e => {
   register({email, password})
   .then((user) => {
     firebase.auth().signInWithEmailAndPassword(email, password)
-    .then(() => location.replace('dashboard.html'));
+    .then(() => location.replace('subcribe.html'));
   })
   .catch(error => {
     // Handle Errors here.
@@ -65,7 +65,7 @@ $('.googleButton').on('click', e => {
     // The signed-in user info.
     var user = result.user;
     console.log("Signed in")
-    window.location.replace("subscribe.html")
+    window.location.replace("dashboard.html")
     // ...
   }).catch(function(error) {
     // Handle Errors here.

@@ -30,7 +30,7 @@ firebase.auth().onAuthStateChanged(user => {
       } else {
         console.log("subscription doesnt exist")
         $("#subscribeDiv").show();
-        
+        autofill(data)
         createCard(stripe);
       }
     })
@@ -158,15 +158,19 @@ function autofill(data) {
   $(`#select-city option[value='${city}']`).attr("selected", "selected");
   $(`#select-pillar option[value='${pillar}']`).attr("selected", "selected");
   let x;
-  for(x of products) {
-    $(`#products input[value='${x}'`).prop("checked", true);
+  if (products){
+    for(x of products) {
+      $(`#products input[value='${x}'`).prop("checked", true);
+    }
   }
   $("input#fullName").val(name);
   $("input#phoneNumber").val(phone);
-  $("input#addressStreet").val(address.street);
-  $("input#addressCity").val(address.city);
-  $("input#addressZip").val(address.zip);
-  $("input#addressState").val(address.state);
+  if(address){
+    $("input#addressStreet").val(address.street);
+    $("input#addressCity").val(address.city);
+    $("input#addressZip").val(address.zip);
+    $("input#addressState").val(address.state);
+  }
 }
 
 function updateText(name){
