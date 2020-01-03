@@ -7,7 +7,7 @@ $('.message a').click(function(){
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     // User is signed in.
-    window.location.replace("subscribe.html")
+    window.location.replace("dashboard.html")
   } else {
     console.log("unsigned")
     // No user is signed in.
@@ -25,7 +25,7 @@ $('.register-form').on('submit', e => {
   register({email, password})
   .then((user) => {
     firebase.auth().signInWithEmailAndPassword(email, password)
-    .then(() => location.replace('subscribe.html'));
+    .then(() => location.replace('dashboard.html'));
   })
   .catch(error => {
     // Handle Errors here.
@@ -43,7 +43,7 @@ $('.login-form').on('submit', e => {
   loading("#loginButton");
 
   firebase.auth().signInWithEmailAndPassword(email, password)
-  .then(function(){window.location.replace('subscribe.html')})
+  .then(function(){window.location.replace('dashboard.html')})
   .catch(error => {
     // Handle Errors here.
     var errorCode = error.code;

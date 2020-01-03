@@ -116,7 +116,7 @@ function setupUpdateButton(){
     const updateSubscription = firebase.functions().httpsCallable('updateSubscription');
     const data = getFormValue();
     updateSubscription(data)
-      .then(result => reload('Subscription updated successfully'))
+      .then(result => redirect('dashboard.html', 'Subscription updated successfully'))
       .catch(error => toast(error.message));
   });
 }

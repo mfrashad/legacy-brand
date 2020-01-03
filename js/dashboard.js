@@ -26,7 +26,6 @@ firebase.auth().onAuthStateChanged(user => {
         autofill(data);
         $("input#email").val(user.email)
         $("#updateDiv").show();
-        setupUpdateButton();
         setupCancelButton();
         fillCard();
         updateText(name);
@@ -62,20 +61,6 @@ function fillCard(){
     $("#cardName").text(name);
   })
   .catch(error => toast(error.message));
-}
-
-function setupUpdateButton(){
-  var form = document.getElementById('payment-form');
-  form.addEventListener('submit', async event => {
-    event.preventDefault();
-    if(!validateForm()) return;
-    loading("#updateButton");
-    const updateSubscription = firebase.functions().httpsCallable('updateSubscription');
-    const data = getFormValue();
-    updateSubscription(data)
-      .then(result => reload('Subscription updated successfully'))
-      .catch(error => toast(error.message));
-  });
 }
 
 function setupCancelButton() {

@@ -3,7 +3,6 @@ layout: default
 ---
 <div id="subscription-page" class="container">
   <h3 id="welcomeText"" class="text-center text-capitalize"></h3>
-  <form action="/charge" method="post" id="payment-form">
   <section id="plan" class="mt-3">
     <h5 class="text-center">My Subscription Plan</h5>
     <div class="card mx-auto p-3 my-3">
@@ -95,10 +94,10 @@ layout: default
     </div>
   </section>
   <div id="updateDiv" class="text-center" style="display: none;">
+    <p class="text-muted">You can only edit your subscription between 1st - 7th day of the month</p>
     <button id="cancelButton" type="button" class="btn-hover red mb-5 mt-0" >CANCEL SUBSCRIPTION</button>
-    <button id="updateButton" type="submit" class="btn-hover green mb-5 mt-0" >EDIT</button>
+    <a href="subscribe.html"> <button id="updateButton" type="submit" class="btn-hover green mb-5 mt-0" >EDIT</button></a>
   </div>
-  </form>
 </div>
 
 <script src="https://js.stripe.com/v3/"></script>

@@ -420,9 +420,10 @@ body {
     height: 200px;
     border-radius: 15px;
     backface-visibility: hidden;
-    background: linear-gradient(135deg, #7EC46A,#018134);
+    // background: linear-gradient(135deg, #7EC46A,#018134);
+    background: linear-gradient(135deg, #FFF,#f1f1f1);
     position: absolute;
-    color: #fff;
+    color: #555;
     
     top: 0;
     left: 0;
@@ -481,7 +482,7 @@ body {
     height: 45px;
     top: 20px;
     left: 20px;
-    background: linear-gradient(135deg, hsl(269,54%,87%) 0%,hsl(200,64%,89%) 44%,hsl(18,55%,94%) 100%);;
+    background: linear-gradient(135deg, #D2BC6F, #F6E3B8);;
     border-radius: 8px;
 
     &::before {

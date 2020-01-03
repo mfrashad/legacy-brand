@@ -34,7 +34,11 @@ function loading(element){
 }
 
 function reload(message){
-  var url = new URL(window.location.href);
+  redirect(window.location.pathname, message)
+}
+
+function redirect(dest, message){
+  var url = new URL(window.location.origin +'/'+ dest);
   url.searchParams.set('notice', message);
   window.location.href = url.href;
 }
