@@ -56,7 +56,7 @@ function fillCard(){
   .then(card => {
     const { last4, exp_month, exp_year, name} = card.data;
     debugger
-    $("#cardNumber").text(`XXXX-XXXX-XXXX-${last4}`);
+    $("#cardNumber").text(`XXXX XXXX XXXX ${last4}`);
     $("#cardExp").text(`${exp_month < 10 ?"0" + exp_month : exp_month}/${exp_year.toString().substring(2,4)}`)
     $("#cardName").text(name);
   })
