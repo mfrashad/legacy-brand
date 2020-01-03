@@ -55,10 +55,11 @@ function fillCard(){
   const getCard = firebase.functions().httpsCallable('getCard');
   getCard()
   .then(card => {
-    const { last4, exp_month, exp_year, name} = card;
-    $("#payment .number").text(`xxxx-xxxx-xxxx-${last4}`);
-    $("#payment .card-expiration-date").text(`${exp_month}/${exp_year.substring(2,4)}`)
-    $("#payment .card-holder").text(name);
+    const { last4, exp_month, exp_year, name} = card.data;
+    debugger
+    $("#cardNumber").text(`XXXX-XXXX-XXXX-${last4}`);
+    $("#cardExp").text(`${exp_month < 10 ?"0" + exp_month : exp_month}/${exp_year.toString().substring(2,4)}`)
+    $("#cardName").text(name);
   })
   .catch(error => toast(error.message));
 }

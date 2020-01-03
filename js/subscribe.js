@@ -26,7 +26,6 @@ firebase.auth().onAuthStateChanged(user => {
         autofill(data);
         $("#updateDiv").show();
         setupUpdateButton();
-        setupCancelButton();
         updateText(name);
       } else {
         console.log("subscription doesnt exist")
@@ -118,18 +117,6 @@ function setupUpdateButton(){
     const data = getFormValue();
     updateSubscription(data)
       .then(result => reload('Subscription updated successfully'))
-      .catch(error => toast(error.message));
-  });
-}
-
-function setupCancelButton() {
-  var button = document.getElementById('cancelButton');
-  button.addEventListener('click', async event => {
-    event.preventDefault();
-    loading("#cancelButton");
-    const cancelSubscription = firebase.functions().httpsCallable('cancelSubscription');
-    cancelSubscription()
-      .then(result => reload('Subscription cancelled successfullly'))
       .catch(error => toast(error.message));
   });
 }
