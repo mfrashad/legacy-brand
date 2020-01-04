@@ -17,7 +17,7 @@ const stripe = Stripe('pk_test_vwY33uSQEAm18eCK6JoTvjKX00cFlWEqFZ');
 
 
 
-function fillInfo(data){
+function fillInfo(user, data){
   const { subscription, name } = data;
   if(subscription) {        
     autofill(data);
@@ -39,7 +39,7 @@ firebase.auth().onAuthStateChanged(async (user) => {
     const ref = db.collection("stripe_customers").doc(user.uid);
     const doc = await ref.get();
     if(doc.exists) {
-      fillInfo(doc.data());
+      fillInfo(user, doc.data());
     } else {
       const createCustomer = firebase.functions().httpsCallable('createCustomer');
       const customer = await createCustomer();
