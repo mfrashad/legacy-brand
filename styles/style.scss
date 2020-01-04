@@ -196,13 +196,16 @@ body {
   outline: none;
 }
 .btn-hover.green {
-     background-image: linear-gradient(to right, #AED453,#049A61, #65BB59, #049A61);  box-shadow: 0 5px 15px rgba(242, 97, 103, .4);
+     background-image: linear-gradient(to right, #AED453,#049A61, #65BB59, #049A61);  box-shadow: 0 5px 15px rgba(97, 242, 97, 0.4);
 }
 
 .btn-hover.red {
   background-image: linear-gradient(to right, #e7772c,#c0392b, #e45f3e, #af3022);  box-shadow: 0 5px 15px rgba(242, 97, 103, .4);
 }
 
+.btn-hover:disabled {
+  background-image: linear-gradient(to right, rgb(196, 196, 196),rgb(196, 196, 196));  box-shadow: 0 5px 15px rgba(175, 175, 175, 0.4);
+}
 
 #loginPage, #registerPage { 
 

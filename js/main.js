@@ -53,4 +53,8 @@ function redirect(dest, message){
   window.location.href = url.href;
 }
 
+function checkDate(){
+  return (new Date(Date.now()).getDate() < 7)
+}
+
 
