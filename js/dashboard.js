@@ -158,12 +158,14 @@ function updateText(name){
 function fillInvoices(invoices){
   let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
   let total_contribution = 0;
+  let total_paid = 0;
   for (i of invoices) {
     const d = new Date(i.created * 1000);
     const date = `${d.getDate()} ${months[d.getMonth()]} ${d.getFullYear()}`;
     const total = i.total / 100;
     const contribution = total * 0.15;
-    total_contribution += contribution;
+    total_paid = total_paid + total;
+    console.log(total_paid);
     const { city, pillar } = i.metadata;
     $("tbody").append(`
       <tr>
@@ -177,5 +179,25 @@ function fillInvoices(invoices){
       </tr>
     `)
   }
+  total_contribution = total_paid * 0.15;
+  if(total_contribution > 0) initChart(total_paid, total_contribution);
   $("#contribution").text(`Total Contributed: $${total_contribution.toFixed(2)}`)
+}
+
+function initChart(total, contribution){
+  console.log(contribution)
+  var ctx = document.getElementById("myChart").getContext('2d');
+  var myChart = new Chart(ctx, {
+      type: 'pie',
+      data: {
+          labels: ["Total Paid",	"Total Contribution"],
+          datasets: [{    
+              data: [total, contribution.toFixed(2)], // Specify the data values array
+              backgroundColor: ['#BAD85F', '#31A95D'], // Add custom color background (Points and Fill)
+          }]},         
+      options: {
+        responsive: true, // Instruct chart js to respond nicely.
+        maintainAspectRatio: false, // Add to prevent default behaviour of full-width/height 
+      }
+  });
 }
