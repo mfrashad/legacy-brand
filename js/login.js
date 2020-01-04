@@ -65,8 +65,8 @@ $('.googleButton').on('click', e => {
     // The signed-in user info.
     var user = result.user;
     console.log("Signed in")
-    window.location.replace("dashboard.html")
-    // ...
+    const createStripeCustomer = firebase.functions().httpsCallable('createStripeCustomer');
+    createStripeCustomer({user}).then(() => {debugger;window.location.replace("subscribe.html")}).catch(e => toast(e.message))
   }).catch(function(error) {
     // Handle Errors here.
     var errorCode = error.code;
