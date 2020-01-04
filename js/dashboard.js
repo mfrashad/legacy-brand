@@ -169,18 +169,19 @@ function fillInvoices(invoices){
     const total = i.total / 100;
     const contribution = total * 0.15;
     total_paid = total_paid + total;
+    const sign = total > 0 ? "" : "-";
     console.log(total_paid);
     const { city, pillar } = i.metadata;
     $("tbody").append(`
       <tr>
         <td scope="row">${date}</td>
         <td class="${total > 0 ? "text-success" : "text-danger"}">${total > 0 ? "PAID" : "REFUNDED"}</td>
-        <td>$${Math.abs(total)}</td>
-        <td>$${contribution.toFixed(2)}</td>
+        <td>${sign}$${Math.abs(total)}</td>
+        <td>${sign}$${Math.abs(contribution).toFixed(2)}</td>
         <td>${city}</td>
         <td>${pillar}</td>
-        ${i.hosted_invoice_url ? '<td><a href="${i.hosted_invoice_url}" target="_blank">View</a></td>' : ''}
-        ${i.invoice_pdf ? '<td><a href="${i.invoice_pdf}" target="_blank">Download</a></td>' : ''}
+        ${i.hosted_invoice_url ? '<td><a href="${i.hosted_invoice_url}" target="_blank">View</a></td>' : '<td>-</td>'}
+        ${i.invoice_pdf ? '<td><a href="${i.invoice_pdf}" target="_blank">Download</a></td>' : '<td>-</td>'}
       </tr>
     `)
   }
