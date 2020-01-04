@@ -57,27 +57,24 @@ $('.login-form').on('submit', e => {
 
 var provider = new firebase.auth.GoogleAuthProvider();
 
-$('.googleButton').on('click', e => {
-  e.preventDefault()
-  firebase.auth().signInWithPopup(provider).then(function(result) {
-    // This gives you a Google Access Token. You can use it to access the Google API.
-    var token = result.credential.accessToken;
-    // The signed-in user info.
-    var user = result.user;
-    console.log("Signed in")
-    const createStripeCustomer = firebase.functions().httpsCallable('createStripeCustomer');
-    createStripeCustomer({user}).then(() => {debugger;window.location.replace("subscribe.html")}).catch(e => toast(e.message))
-  }).catch(function(error) {
+$('.googleButton').on('click',(e) => {
+  e.preventDefault();
+  const email = $('#registerEmail').val()
+  const password = $("#registerPassword").val()
+  const createCustomer = firebase.functions().httpsCallable('createCustomer');
+
+  const provider = new firebase.auth.GoogleAuthProvider();
+  firebase.auth().signInWithPopup(provider)
+  .then((result) => {
+    window.location.replace('dashboard.html');
+  })
+  .catch(error => {
     // Handle Errors here.
+    console.log(error);
+    debugger;
     var errorCode = error.code;
     var errorMessage = error.message;
-    // The email of the user's account used.
-    var email = error.email;
-    // The firebase.auth.AuthCredential type that was used.
-    var credential = error.credential;
-    $('.alert p').text(errorMessage)
-    $('.alert').show()
-    // ...
+    toast(errorMessage);
   });
 })
 

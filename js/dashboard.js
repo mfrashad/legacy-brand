@@ -15,29 +15,39 @@ $("#select-package").on('change', function(e){
 
 const stripe = Stripe('pk_test_vwY33uSQEAm18eCK6JoTvjKX00cFlWEqFZ');
 
-firebase.auth().onAuthStateChanged(user => {
+
+
+function fillInfo(data){
+  const { subscription, name } = data;
+  if(subscription) {        
+    autofill(data);
+    $("input#email").val(user.email)
+    $("#updateDiv").show();
+    setupCancelButton();
+    fillCard();
+    getInvoices();
+    updateText(name);
+  } else {
+    console.log("subscription doesnt exist")
+    window.location.replace('subscribe.html')
+  }
+}
+
+firebase.auth().onAuthStateChanged(async (user) => {
   if (user) {
     console.log(user.uid);
-    const ref = db.collection("stripe_customers").doc(user.uid)
-    ref.get().then(function(doc){
-      const data = doc.data();
-      const { subscription, name } = data;
-      if(subscription) {        
-        autofill(data);
-        $("input#email").val(user.email)
-        $("#updateDiv").show();
-        setupCancelButton();
-        fillCard();
-        getInvoices();
-        updateText(name);
-      } else {
-        console.log("subscription doesnt exist")
-        window.location.replace('subscribe.html')
-      }
-    })
-    .catch(function(error){ toast(error.message) })
+    const ref = db.collection("stripe_customers").doc(user.uid);
+    const doc = await ref.get();
+    if(doc.exists) {
+      fillInfo(doc.data());
+    } else {
+      const createCustomer = firebase.functions().httpsCallable('createCustomer');
+      const customer = await createCustomer();
+      console.log(customer)
+      //reload();
+    }
   } else {
-    window.location.replace('login.html')
+    window.location.replace('login.html');
   }
 });
 
