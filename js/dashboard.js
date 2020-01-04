@@ -90,6 +90,7 @@ function setupCancelButton() {
   var button = document.getElementById('cancelButton');
   button.addEventListener('click', async event => {
     event.preventDefault();
+    if(!confirm("Are you sure you want to cancel the subscription? There is no refund!")) return;
     const text = loading("#cancelButton");
     const cancelSubscription = firebase.functions().httpsCallable('cancelSubscription');
     cancelSubscription()
