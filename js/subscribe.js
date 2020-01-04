@@ -108,10 +108,10 @@ function createCard(stripe){
       if (result.error) {
         var errorElement = document.getElementById('card-errors');
         errorElement.textContent = result.error.message;
+        stopLoading("#subscribeButton", text);
       } else {
         stripeTokenHandler(result.token);
       }
-      stopLoading("#subscribeButton", text);
     });
   });
 }
