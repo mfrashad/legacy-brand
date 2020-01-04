@@ -87,11 +87,14 @@ function setupCancelButton() {
   var button = document.getElementById('cancelButton');
   button.addEventListener('click', async event => {
     event.preventDefault();
-    loading("#cancelButton");
+    const text = loading("#cancelButton");
     const cancelSubscription = firebase.functions().httpsCallable('cancelSubscription');
     cancelSubscription()
       .then(result => reload('Subscription cancelled successfullly'))
-      .catch(error => toast(error.message));
+      .catch(error => {
+        stopLoading("#cancelButton", text);
+        toast(error.message);
+      });
   });
 }
 

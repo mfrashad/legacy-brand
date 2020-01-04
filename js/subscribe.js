@@ -91,7 +91,7 @@ function createCard(stripe){
   form.addEventListener('submit', event => {
     event.preventDefault();
     if(!validateForm()) return;
-    loading("#subscribeButton");
+    const text = loading("#subscribeButton");
     const {name, address} = getFormValue();
     stripe.createToken(card, {
       name,
@@ -106,6 +106,7 @@ function createCard(stripe){
       } else {
         stripeTokenHandler(result.token);
       }
+      stopLoading("#subscribeButton", text);
     });
   });
 }
@@ -115,12 +116,15 @@ function setupUpdateButton(){
   form.addEventListener('submit', async event => {
     event.preventDefault();
     if(!validateForm()) return;
-    loading("#updateButton");
+    const text = loading("#updateButton");
     const updateSubscription = firebase.functions().httpsCallable('updateSubscription');
     const data = getFormValue();
     updateSubscription(data)
       .then(result => redirect('dashboard.html', 'Subscription updated successfully'))
-      .catch(error => toast(error.message));
+      .catch(error => {
+        stopLoading("#updateButton", text);
+        toast(error.message);
+      });
   });
 }
 
@@ -134,7 +138,10 @@ function stripeTokenHandler(token) {
       const data = getFormValue();
       subscribe({token: token.id, ...data})
         .then(result => location.replace('thankyou.html'))
-        .catch(error => toast(error.message));
+        .catch(error => {
+          stopLoading("#subscribeButton", "SUBSCRIBE");
+          toast(error.message);
+        });
     })
 }
 

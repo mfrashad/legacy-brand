@@ -34,7 +34,13 @@ function toast(message, type = "alert-warning") {
 }
 
 function loading(element){
+  const text = $(element).text();
   $(element).html("<img src='assets/loading-white.svg' width='30px'>");
+  return text;
+}
+
+function stopLoading(element, text){
+  $(element).text(text);
 }
 
 function reload(message){
