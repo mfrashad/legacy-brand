@@ -49,6 +49,7 @@ firebase.auth().onAuthStateChanged(async (user) => {
   } else {
     window.location.replace('login.html');
   }
+  finishLoad();
 });
 
 function validateForm(){

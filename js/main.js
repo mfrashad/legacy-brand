@@ -24,6 +24,10 @@ if(notice){
   toast(notice, 'alert-primary')
 }
 
+function finishLoad(){
+  $('.preloader').fadeOut();
+}
+
 function toast(message, type = "alert-warning") {
   $('.alert p').text(message)
   $('.alert').removeClass('alert-primary alert-warning').addClass(type).show()

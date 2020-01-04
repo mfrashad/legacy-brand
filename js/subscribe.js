@@ -33,11 +33,14 @@ firebase.auth().onAuthStateChanged(user => {
         autofill(data)
         createCard(stripe);
       }
+      finishLoad();
     })
-    .catch(function(error){ toast(error.message) })
+    .catch(function(error){ finishLoad();toast(error.message) })
   } else {
     window.location.replace('login.html')
+    finishLoad();
   }
+  
 });
 
 function validateForm(){

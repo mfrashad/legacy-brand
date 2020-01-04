@@ -1,6 +1,9 @@
 ---
 layout: default
 ---
+<div class="preloader">
+  <img src="assets/loading-white.svg" alt="spinner">
+</div>
 <div id="subscription-page" class="container">
   <h3 id="welcomeText"" class="text-center text-capitalize"></h3>
   <form action="/charge" method="post" id="payment-form">
@@ -14,7 +17,6 @@ layout: default
               {% for package in site.data.plan.packages %}
                 <option value="{{package.quantity}}">{{package.name}}</option>
               {% endfor %}
-              
             </select>
           </div>
       </div>
