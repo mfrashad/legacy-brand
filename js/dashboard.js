@@ -174,12 +174,13 @@ function fillInvoices(invoices){
     $("tbody").append(`
       <tr>
         <td scope="row">${date}</td>
-        <td>$${total}</td>
+        <td class="${total > 0 ? "text-success" : "text-danger"}">${total > 0 ? "PAID" : "REFUNDED"}</td>
+        <td>$${Math.abs(total)}</td>
         <td>$${contribution.toFixed(2)}</td>
         <td>${city}</td>
         <td>${pillar}</td>
-        <td><a href="${i.hosted_invoice_url}" target="_blank">View</a></td>
-        <td><a href="${i.invoice_pdf}" target="_blank">Download</a></td>
+        ${i.hosted_invoice_url ? '<td><a href="${i.hosted_invoice_url}" target="_blank">View</a></td>' : ''}
+        ${i.invoice_pdf ? '<td><a href="${i.invoice_pdf}" target="_blank">Download</a></td>' : ''}
       </tr>
     `)
   }
