@@ -175,7 +175,7 @@ function autofill(data) {
   let x;
   if (products){
     for(x of products) {
-      $(`#products input[value='${x}'`).prop("checked", true);
+      $(`#products input[value='${x}']`).prop("checked", true);
     }
   }
   $("input#fullName").val(name);
