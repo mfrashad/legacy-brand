@@ -180,8 +180,8 @@ function fillInvoices(invoices){
         <td>${sign}$${Math.abs(contribution).toFixed(2)}</td>
         <td>${city}</td>
         <td>${pillar}</td>
-        ${i.hosted_invoice_url ? '<td><a href="${i.hosted_invoice_url}" target="_blank">View</a></td>' : '<td>-</td>'}
-        ${i.invoice_pdf ? '<td><a href="${i.invoice_pdf}" target="_blank">Download</a></td>' : '<td>-</td>'}
+        ${i.hosted_invoice_url ? `<td><a href="${i.hosted_invoice_url}" target="_blank">View</a></td>` : '<td>-</td>'}
+        ${i.invoice_pdf ? `<td><a href="${i.invoice_pdf}" target="_blank">Download</a></td>` : '<td>-</td>'}
       </tr>
     `)
   }
