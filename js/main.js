@@ -1,5 +1,8 @@
 AOS.init({duration: 500, delay: 300});
 
+const LIVE_PK = "pk_live_3o8XcCuGk6ylw25DBUG0ha7N00KdFKhUTR";
+const TEST_PK = "pk_test_vwY33uSQEAm18eCK6JoTvjKX00cFlWEqFZ";
+
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     console.log('Signed in')
