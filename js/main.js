@@ -57,7 +57,7 @@ function redirect(dest, message){
 }
 
 function checkDate(){
-  return (new Date(Date.now()).getDate() < 7)
+  return (new Date(Date.now()).getDate() <= 7)
 }
 
 
