@@ -5,68 +5,20 @@
 layout: default
 ---
 <div id="home" class="container-fluid m-0">
-<section id="banner">
-  <img srcset="assets/home-background.jpg 974w, assets/home-background@2x.jpg 1948w"
-        sizes="(max-width: 600px) 100vw, 100vw"
-        src="assets/home-background.jpg" alt="Home Background">
-  <h1>Welcome to <br> <strong>Legacy Brands</strong></h1>  
-</section>
-<section id="what" class="container-fluid">
-  <div class="row align-items-center">
-    <div class="col-12 col-md-6">
-      <img class="mb-3" src="assets/what-img.svg" data-aos="fade-up">
-    </div>
-    <div class="col-12 col-md-6 pl-4" data-aos="fade-up">
-      <h4 class="my-3"><strong>What is Legacy Brands?</strong></h4>
-      <p>Legacy Brands is OUR online products and services platform dedicated to rebuilding our inner cities. Once you register you can become a customer and buy products or services, OR you can become a vendor and sell your products or services.</p>
-    </div>
-  </div>
-</section >
-<section id="how" class="container-fluid">
-  <div class="row align-items-center">
-    <div class="col-12 col-md-6 order-md-2">
-      <img class="mb-3 w-75" src="assets/how-img.svg" data-aos="fade-up">
-    </div>
-    <div class="col-12 col-md-6 order-md-1 pl-4" data-aos="fade-up">
-      <h4 class="my-3"><strong>How does it work?</strong></h4>
-      <p>You can direct fifteen percent (15%) of every purchase to the Inner City and Economic Pillar that you desire!</p>
-    </div>
-  </div>
-</section >
-<section id="mission" class="container-fluid">
-  <div class="row align-items-center">
-    <div class="col-12 col-md-6">
-      <img class="mb-3  pr-5 w-100" src="assets/mission-img.svg" data-aos="fade-up">
-    </div>
-    <div class="col-12 col-md-6" data-aos="fade-up">
-      <h4 class="my-3"><strong>Our Mission</strong></h4>
-      <p>We have the belief system that the key to our future is that of self reliance and economic independence. We must rebuild our communities to ensure that our children are afforded all of the opportunities of other communities, we must join together and redirect our spending. By making Legacy Brands your conscious purchase you are ensuring that your dollar recirculates in our community and is used to further our cause, Rebuilding Our Community, one purchase at a time.</p>
-      <hr>
-      <p>Spring 2020 we will launch our very own online platform where you can become a customer, seller, service provider or both! After we launch, you will be able to download the Legacy App on your phone and purchase items or services from OUR platform instead of the others guys'.</p>
-    </div>
-  </div>
-</section >
-<section id="impact" class="container-fluid text-center p-5" data-aos="fade-up">
-    <h3><strong>ARE YOU READY TO MAKE IMPACT IN OUR COMMUNITY?</strong></h3>
-    <p>With each dollar that you spend, 15% of the total spend will be allocated to our sister Non-Profit Inspiring America. Inspiring America, a registered 501C3 will hold all monies, easily tracked by you and direct the monies to the 7 Economic Pillars needed to restore our 26 Inner Cities</p>
-</section >
 
-{% include pillars.html %}
-<section id="commitment" class="container-fluid">
-  <div class="row align-items-center">
-    <div class="col-12 col-md-6 text-center">
-      <img class="mb-3 w-100" src="assets/commit-img.svg" data-aos="fade-up">
-    </div>
-    <div class="col-12 col-md-6" data-aos="fade-up">
-      <h4 class="my-3"><strong>What’s Next? Are You Ready? We Need A Commitment From You!</strong></h4>
-      <p>We will launch the full online selling/buying platform in Spring 2020 but for a limited time you can sign up for a subscription to purchase OUR OWN line of household products, Legacy Brands.</p>
-      <p>We are so excited to announce that we have formulated and are introducing to the world  our VERY OWN line of household products that you can purchase monthly. These are items that you use purchase monthly from the other guys that refuse to assist in rebuilding our community.</p>
-    </div>
-  </div>
-</section >
-{% include steps.html %}
+{% include home/banner.html %}
+{% include home/what.html %}
+{% include home/mission.html %}
+{% include home/how.html %}
+{% include home/city.html %}
+{% include home/can.html %}
+{% include home/impact.html %}
+{% include home/pillars.html %}
+{% include home/commitment.html %}
+{% include home/steps.html %}
+
 <div class="button-container-fluid fixed-bottom text-center">
-  <button id="subscribeButton" class="btn-hover green" onclick="window.location.href = 'register.html';" >REGISTER TO SUBSCRIBE</button>
+  <button id="subscribeButton" class="btn-hover green" onclick="window.location.href = 'register.html';" >I’m Ready To Start My Subscription</button>
 </div>
 </div>
 
