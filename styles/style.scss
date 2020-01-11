@@ -96,7 +96,8 @@ body {
   white-space: nowrap;
 }
 
-.light-green {
+.green-text {
+  color: #4CAF50
 }
 
 
@@ -155,9 +156,6 @@ body {
     }
   }
 }
-
-
-
 
 
 .button-container {
@@ -597,7 +595,6 @@ body {
 
 .faq-section {
   background: #fdfdfd;
-  min-height: 100vh;
   padding: 10vh 0 0;
 }
 .faq-title h2 {

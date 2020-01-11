@@ -1,4 +1,8 @@
-<section class="faq-section">
+---
+layout: default
+---
+
+<section class="faq-section mb-5">
   <div class="container">
     <div class="row">
       <!-- ***** FAQ Start ***** -->
@@ -9,7 +13,7 @@
       </div>
       <div class="col-md-6 offset-md-3">
         <div class="faq" id="accordion">
-          {% for question in site.data.faqs limit: 3 %}
+          {% for question in site.data.faqs %}
           <div class="card">
             <div class="card-header" id="faqHeading-{{forloop.index}}" data-toggle="collapse" data-target="#faqCollapse-{{forloop.index}}" data-aria-expanded="true" data-aria-controls="faqCollapse-{{forloop.index}}">
               
@@ -31,7 +35,7 @@
       </div>
     </div>
     <div class="row">
-      <a href="faq.html" class="mx-auto my-3"><button class="btn green-text btn-lg">VIEW MORE</button></a>
+      <a href="/" class="mx-auto my-3"><button class="btn-hover green btn-lg">BACK</button></a>
     </div>
   </div>
 </section>
