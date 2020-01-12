@@ -47,23 +47,13 @@ firebase.auth().onAuthStateChanged(async (user) => {
       const createCustomer = firebase.functions().httpsCallable('createCustomer');
       const customer = await createCustomer();
       console.log(customer)
-      //reload();
+      reload();
     }
   } else {
     window.location.replace('login.html');
   }
   finishLoad();
 });
-
-function validateForm(){
-  const checked = $('#products input[type="checkbox"]:checked').length;
-  const quantity = parseInt($("#select-package option:selected").val())
-  if( checked !== quantity ) {
-    toast(`Please select ${quantity} products for this package, or change to another package.`);
-    return false;
-  }
-  return true;
-}
 
 function fillCard(){
   const getCard = firebase.functions().httpsCallable('getCard');
@@ -86,56 +76,8 @@ function getInvoices(){
    .catch(error => toast(error.message));
 }
 
-function setupCancelButton() {
-  var button = document.getElementById('cancelButton');
-  button.addEventListener('click', async event => {
-    event.preventDefault();
-    if(!confirm("Are you sure you want to cancel the subscription? There is no refund!")) return;
-    const text = loading("#cancelButton");
-    const cancelSubscription = firebase.functions().httpsCallable('cancelSubscription');
-    cancelSubscription()
-      .then(result => reload('Subscription cancelled successfullly'))
-      .catch(error => {
-        stopLoading("#cancelButton", text);
-        toast(error.message);
-      });
-  });
-}
-
-// Save token to firestore
-function stripeTokenHandler(token) {
-  const user = firebase.auth().currentUser;
-  const userRef = db.collection("stripe_customers").doc(user.uid)
-  userRef.collection("tokens").add({token: token.id})
-    .then(() => {
-      const subscribe = firebase.functions().httpsCallable('subscribe');
-      const data = getFormValue();
-      subscribe({token: token.id, ...data})
-        .then(result => location.replace('thankyou.html'))
-        .catch(error => toast(error.message));
-    })
-}
-
-function getFormValue() {
-  const quantity = parseInt($("#select-package option:selected").val());
-  const products = $("#products input:checked").map(function() {return $(this).attr('value')}).get();
-  const city = $("#select-city option:selected").val()
-  const pillar = $("#select-pillar option:selected").val()
-  const name = $("input#fullName").val()
-  //const email = $("input#email").val()
-  const phone = $("input#phoneNumber").val()
-  const address = {
-    street: $("input#addressStreet").val(),
-    city: $("input#addressCity").val(),
-    zip: $("input#addressZip").val(),
-    state: $("input#addressState").val(),
-  }
-
-  return { quantity, products, city, pillar, name, phone, address };
-}
-
 function autofill(data) {
-  const { quantity, products, city, pillar, name, phone, address } = data;
+  const { quantity, products, city, pillar, name, phone, address, shippingAddress } = data;
   $("input#package").val(`$${quantity - 1}9.99 - ${quantity} Products`);
   $("input#legacyCity").val(city);
   $("input#pillar").val(pillar);
@@ -145,10 +87,19 @@ function autofill(data) {
   }
   $("input#fullName").val(name);
   $("input#phoneNumber").val(phone);
-  $("input#addressStreet").val(address.street);
-  $("input#addressCity").val(address.city);
-  $("input#addressZip").val(address.zip);
-  $("input#addressState").val(address.state);
+
+  if(address){
+    $("input#addressStreet").val(address.street);
+    $("input#addressCity").val(address.city);
+    $("input#addressZip").val(address.zip);
+    $("input#addressState").val(address.state);
+  }
+  if(shippingAddress){
+    $("input#addressStreet").val(address.street);
+    $("input#addressCity").val(address.city);
+    $("input#addressZip").val(address.zip);
+    $("input#addressState").val(address.state);
+  }
 }
 
 function updateText(name){

@@ -163,12 +163,18 @@ function getFormValue() {
     zip: $("input#addressZip").val(),
     state: $("input#addressState").val(),
   }
+  const shippingAddress = {
+    street: $("input#shippingAddressStreet").val(),
+    city: $("input#shippingAddressCity").val(),
+    zip: $("input#shippingAddressZip").val(),
+    state: $("input#shippingAddressState").val(),
+  }
 
-  return { quantity, products, city, pillar, name, phone, address };
+  return { quantity, products, city, pillar, name, phone, address, shippingAddress };
 }
 
 function autofill(data) {
-  const { quantity, products, city, pillar, name, phone, address } = data;
+  const { quantity, products, city, pillar, name, phone, address, shippingAddress } = data;
   $(`#select-package option[value=${quantity}]`).attr("selected", "selected");
   $(`#select-city option[value='${city}']`).attr("selected", "selected");
   $(`#select-pillar option[value='${pillar}']`).attr("selected", "selected");
@@ -181,6 +187,12 @@ function autofill(data) {
   $("input#fullName").val(name);
   $("input#phoneNumber").val(phone);
   if(address){
+    $("input#addressStreet").val(address.street);
+    $("input#addressCity").val(address.city);
+    $("input#addressZip").val(address.zip);
+    $("input#addressState").val(address.state);
+  }
+  if(shippingAddress){
     $("input#addressStreet").val(address.street);
     $("input#addressCity").val(address.city);
     $("input#addressZip").val(address.zip);
