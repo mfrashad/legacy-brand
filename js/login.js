@@ -19,7 +19,7 @@ $('.register-form').on('submit', e => {
   const email = $('#registerEmail').val()
   const password = $("#registerPassword").val()
   const confirmPassword = $("#registerConfirmPassword").val()
-  loading("#registerButton");
+  const text = loading("#registerButton");
   const register = firebase.functions().httpsCallable('register');
 
   register({email, password})
@@ -32,6 +32,7 @@ $('.register-form').on('submit', e => {
     var errorCode = error.code;
     var errorMessage = error.message;
     toast(errorMessage);
+    stopLoading('#registerButton', text);
   });
 
 })
@@ -40,18 +41,15 @@ $('.login-form').on('submit', e => {
   e.preventDefault()
   const email = $('#loginEmail').val();
   const password = $("#loginPassword").val();
-  loading("#loginButton");
+  const text = loading("#loginButton");
 
   firebase.auth().signInWithEmailAndPassword(email, password)
   .then(function(){window.location.replace('dashboard.html')})
   .catch(error => {
-    // Handle Errors here.
     var errorCode = error.code;
     var errorMessage = error.message;
     toast(errorMessage);
-    
-    
-    // ...
+    stopLoading('#loginButton', text);
   });
 })
 
@@ -66,7 +64,7 @@ $('.googleButton').on('click',(e) => {
   const provider = new firebase.auth.GoogleAuthProvider();
   firebase.auth().signInWithPopup(provider)
   .then((result) => {
-    window.location.replace('dashboard.html');
+    window.location.replace('subscribe.html');
   })
   .catch(error => {
     // Handle Errors here.
