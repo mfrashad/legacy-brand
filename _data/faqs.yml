@@ -1,21 +1,33 @@
 - question: How often am I being billed?
   answer: You will be billed once per month.
+- question: On what date will I be billed? 
+  answer: You will be billed every month on the same date you subscribed.
 - question: When is product shipped?
   answer: Products are shipped by the 17th of each month
 - question: What are my payments options?
-  answer: "Your payment options are: Credit Card, Debit Card, or Paypal"
+  answer: "Your payment options are: Credit Card or Debit Card"
 - question: What if I do not like the products?
   answer: You can return the products for a full refund
+- question: All products can be returned? What if they are opened and used?
+  answer: Yes, just returned the unused portion
+- question: Who pays for return shipping?
+  answer: You do.
 - question: What if products are damaged upon arrival?
   answer: Take a picture and send it to us. We will resend your order
 - question: How do I check to see the money that I spent?
   answer: After you order you will have a dashboard which will express this information
 - question: Can I change my pillars and/or cities?
   answer: Yes but all changes must be made by the 7 of each month of you will have to wait until the next month.
+- question: If I change the pillar, does the previous money stay with the other pillar or does it all go to my new pillar?
+  answer: If you change pillars all of your money will follow you to your new pillar.  If you change at the end of the fiscal year, then the money will remain with the previous pillar.
 - question: How do I know where there money is being held and how is it being sent?
   answer: We are very transparent with your money. Our accounting will be audited quarterly by an national auditing firm. As a member you will receive a quarterly statement of the non profits finances.
 - question: What is the next step?
   answer: We have formed a board that meets monthly to discuss the money raised, the cities and what steps need to be taken. The planning company will keep you updated as we continue down the investigation process.
+- question: Are the board members representative of all of the cities?
+  answer: No they are representative of the regions (southeast, northeast, etc)
+- question: Can I contact a board member with questions or concerns to bring up in the next meeting?
+  answer: No you would contact your city ambassador.
 - question: How fast can we rebuild cities?
   answer: It depends on how quickly we raise the capital for each city
 - question: What happens if one city raises a great deal of money and others do not?
@@ -28,6 +40,8 @@
   answer: It depends on many factors based on need, population, property costs etc. Once we raise enough capital we can have a private valuation and raise capital that way
 - question: How can I help in my city?
   answer: Each city will have an Legacy Ambassador that will assist in raising money for the city. You can reach out to your Legacy Ambassador and he/she will give you direction.
+- question: How are the Legacy Ambassadors chosen?
+  answer: By their dedication to the cause, knowledge in the subject area, social media presence and experience. 
 - question: Will you raise money via grant righting?
   answer: Yes we have a team of experienced grant writers that will write grants for Inspiring America.
 - question: How long do you think it will take to start the rebuilding process?
@@ -36,9 +50,39 @@
   answer: Not likely. Depending on funding we will start some before others. 
 - question: Many Black Owned companies sell out to Private Equity. How do we know you won’t sell out?
   answer: This violates our Operating Agreement and Mission Statement. We have safeguards in place that won’t allow this to happen.
+- question: What safeguards?  As a member, do I get a vote on major decisions that affect my city and pillar? 
+  answer: The board will not have the power to sell the organization. No, however you can influence the direction by working with your city ambassador.
 - question: What is the end goal?
   answer: The end goal is to have 26 thriving state of the art cities which are independently functioning and contribution to the National GDP. We want the goal of every Legacy Pillar to be fully realized.
 - question: Do you provide free shipping?
   answer: No we do not provide free shipping at this time.
 - question: Do you ship internationally?
   answer: Yes if the customer covers shipping.
+- question: Can I get free samples of products to try out before subscribing? 
+  answer: No, samples are not available
+- question: Will the products be made available in local grocery stores?
+  answer: No, this will be exclusively sold on our online platform.
+- question: How do you vet your suppliers to ensure quality?
+  answer: We personally met with our suppliers, toured their facilities and verified their credentials.  We hope, however, to have our own facility up and running so that we can manufacture our own products.
+- question: Can  one be both a customer and a vendor?
+  answer: Yes, absolutely, but you will have to set up two different profiles. 
+- question: Can I get my money back if I feel the city rebuilding is taking too long?
+  answer: No, we are in it for the long haul.  We believe that this will take time to do this right.  We will be fully transparent with all financials and update you on progress regularly. 
+- question: What if I want to support a different non-profit and not contribute toward Inspiring America?
+  answer: Then you should not subscribe as our funds are going toward our specified projects. 
+- question: How long will it take for the order to be shipped out?
+  answer: Ship once a month on the 17th
+- question: Can I split my 15% between multiple cities in any one month?
+  answer: No.  However, you can change cities and pillars yearly and support other areas. 
+- question: Can I suspend my subscription without cancelling my account if I still have product in stock?
+  answer: Yes. You can skip a month just make sure you do so by the 5th of the month. 
+- question: Can I get unlabelled product for resale?
+  answer: No. 
+- question: Are the products produced locally or outside the US?
+  answer: All of the products are produced in the United States.
+- question: Are any of the products considered green, natural or organic? 
+  answer: No. But a green product line will be coming out soon.
+- question: Can organizations sign up and if non profit will we honor their tax free status?
+  answer: Yes we encourage, companies and organizations to sign  up and buy in volume.
+- question: Is there a way to donate monthly and not purchase products?
+  answer: Absolutely! You can donate monthly directly to Inspiring America by subscription or in one lump sum.
