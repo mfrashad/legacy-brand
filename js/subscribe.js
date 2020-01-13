@@ -18,7 +18,7 @@ if(!checkDate()){
 }
 
 
-const stripe = Stripe(LIVE_PK);
+const stripe = Stripe(TEST_PK);
 
 firebase.auth().onAuthStateChanged(user => {
   if (user) {

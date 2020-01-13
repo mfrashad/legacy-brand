@@ -16,7 +16,7 @@ if(!checkDate()){
   $("#updateButton").prop("disabled", true);
 }
 
-const stripe = Stripe(LIVE_PK);
+const stripe = Stripe(TEST_PK);
 
 
 
