@@ -17,6 +17,21 @@ if(!checkDate()){
   $("#subscribeButton").prop("disabled", true);
 }
 
+$("#addressAutofill").on("click", function(e){
+  e.preventDefault();
+  const address = {
+    street: $("input#addressStreet").val(),
+    city: $("input#addressCity").val(),
+    zip: $("input#addressZip").val(),
+    state: $("input#addressState").val(),
+  }
+
+  $("input#shippingAddressStreet").val(address.street);
+  $("input#shippingAddressCity").val(address.city);
+  $("input#shippingAddressZip").val(address.zip);
+  $("input#shippingAddressState").val(address.state);
+})
+
 
 const stripe = Stripe(TEST_PK);
 
