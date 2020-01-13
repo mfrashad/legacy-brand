@@ -55,6 +55,22 @@ firebase.auth().onAuthStateChanged(async (user) => {
   finishLoad();
 });
 
+function setupCancelButton() {
+  var button = document.getElementById('cancelButton');
+  button.addEventListener('click', async event => {
+    event.preventDefault();
+    if(!confirm("Are you sure you want to cancel the subscription? There is no refund!")) return;
+    const text = loading("#cancelButton");
+    const cancelSubscription = firebase.functions().httpsCallable('cancelSubscription');
+    cancelSubscription()
+      .then(result => reload('Subscription cancelled successfullly'))
+      .catch(error => {
+        stopLoading("#cancelButton", text);
+        toast(error.message);
+      });
+  });
+}
+
 function fillCard(){
   const getCard = firebase.functions().httpsCallable('getCard');
   getCard()
