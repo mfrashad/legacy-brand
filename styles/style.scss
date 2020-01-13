@@ -8,6 +8,11 @@ body {
   /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 }
 
+video {
+  max-width: 100%;
+  height: auto;
+}
+
 .checkbox label{
   color: #495057;
 }
