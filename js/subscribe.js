@@ -17,19 +17,30 @@ if(!checkDate()){
   $("#subscribeButton").prop("disabled", true);
 }
 
-$("#addressAutofill").on("click", function(e){
+$("#autofillAddress input").on("change", function(e){
   e.preventDefault();
-  const address = {
-    street: $("input#addressStreet").val(),
-    city: $("input#addressCity").val(),
-    zip: $("input#addressZip").val(),
-    state: $("input#addressState").val(),
+  if(this.checked) {
+    //Do stuff
+    const address = {
+      street: $("input#addressStreet").val(),
+      city: $("input#addressCity").val(),
+      zip: $("input#addressZip").val(),
+      state: $("input#addressState").val(),
+    }
+  
+    $("input#shippingAddressStreet").val(address.street).prop('disabled', true);
+    $("input#shippingAddressCity").val(address.city).prop('disabled', true);
+    $("input#shippingAddressZip").val(address.zip).prop('disabled', true);
+    $("input#shippingAddressState").val(address.state).prop('disabled', true);
   }
-
-  $("input#shippingAddressStreet").val(address.street);
-  $("input#shippingAddressCity").val(address.city);
-  $("input#shippingAddressZip").val(address.zip);
-  $("input#shippingAddressState").val(address.state);
+  else {
+    $("input#shippingAddressStreet").prop('disabled', false);
+    $("input#shippingAddressCity").prop('disabled', false);
+    $("input#shippingAddressZip").prop('disabled', false);
+    $("input#shippingAddressState").prop('disabled', false);
+  }
+  
+  
 })
 
 
