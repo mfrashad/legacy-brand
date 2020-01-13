@@ -111,10 +111,10 @@ function autofill(data) {
     $("input#addressState").val(address.state);
   }
   if(shippingAddress){
-    $("input#addressStreet").val(address.street);
-    $("input#addressCity").val(address.city);
-    $("input#addressZip").val(address.zip);
-    $("input#addressState").val(address.state);
+    $("input#shippingAddressStreet").val(shippingAddress.street);
+    $("input#shippingAddressCity").val(shippingAddress.city);
+    $("input#shippingAddressZip").val(shippingAddress.zip);
+    $("input#shippingAddressState").val(shippingAddress.state);
   }
 }
 
