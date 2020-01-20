@@ -81,6 +81,31 @@ video {
   }
 }
 
+#home section#bio {
+  .row {
+    align-items: flex-end;
+  }
+  img {
+    width: 250px;
+    bottom: 0;
+  }
+  #bioText {
+    margin-bottom: 40px;
+    font-size: 0.9em;
+
+    .contact {
+      font-size: 0.9em;
+      line-height: 0.5;
+    }
+  }
+  #bioImage {
+    bottom: -20px;
+    vertical-align: bottom;
+  }
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
 #impact {
   width: 100%;
   color: white;
@@ -126,12 +151,20 @@ video {
       height:60vh;
     }
   }
+
+ 
 }
 
 @media only screen and (min-width: 768px) {
   #home {
     section {
       padding: 20px 80px;
+    }
+
+    section#bio {
+      img {
+        width: 400px;
+      }
     }
   }
 
