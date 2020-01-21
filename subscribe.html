@@ -37,10 +37,16 @@ layout: default
                 <span></span>
               </div>
               <div class="check-card-body-in">
-                <img src="assets/products/{{product.image}}" width="150">
+                <img src="assets/products/{{product.image}}" width="100">
                 <p class="check-card-description mt-2">
                   {{product.name}}
                 </p>
+                <p class="text-muted product-description">
+                {% for desc in product.descriptions %}
+                  • {{desc.text}} •<br>
+                {% endfor %}
+                </p>
+              
               </div>
             </div>
           </li>

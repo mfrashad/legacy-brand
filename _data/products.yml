@@ -1,30 +1,116 @@
 - name: 2 x Napkins
   image: 2-napkins.png
+  descriptions:
+    - text: Extra Absorbent
+    - text: 60 Napkins
+    - text: 2-Ply
+    - text: 2-Pack
+- name: Toilet Tissue
+  image: toilet-tissue.png
+  descriptions:
+    - text: Soft & Strong
+    - text: Long Lasting
+    - text: 12 Rolls
+    - text: 2-Ply
 - name: Multi-Purpose Bathroom Cleaner
   image: bathroom-cleaner.jpg
+  descriptions:
+    - text: Dissolves Soap Scum & Hard Water Film
+    - text: Disinfects And Cleans Tough Stains
+    - text: Kills Germs
+    - text: 32 Fluid Ounces
 - name: Dishwashing Detergent
   image: dishwashing-detergent.png
+  descriptions:
+    - text: Dissolves Stuck On Food
+    - text: Advanced Formula
+    - text: Powerful Cleaning 
+    - text: 70 Fluid Ounces
 - name: 2 x Dishwashing Liquid
   image: 2-dishwashing-liquid.jpg
+  descriptions:
+    - text: Cleans Tough Food Residue
+    - text: Leaves Dishes Sparkling Clean
+    - text: 8 Fluid Ounces
+    - text: 2-Pack
 - name: Glass Cleaner
   image: glass-cleaner.jpg
+  descriptions:
+    - text: Leaves Streak Free Clean
+    - text: Loosens Dirt And Grime On Contact
+    - text: Leaves Sparkling Clean Surface
+    - text: 32 Fluid Ounces
 - name: 2 x Hand Soap
   image: 2-hand-soap.png
+  descriptions:
+    - text: Cleans Soiled Hands
+    - text: Leaves Hands Clean & Soft
+    - text: Anti-Bacterial
+    - text: 12 Fluid Ounces
 - name: 2 x Paper Plates
   image: 2-paper-plates.png
+  descriptions:
+    - text: Heavy Duty
+    - text: 150 Paper Plates
+    - text: Microwave Safe
+    - text: 2-Pack
 - name: Paper Towels
   image: paper-towels.png
+  descriptions:
+    - text: Virgin Pulp Wood
+    - text: Heavy Duty
+    - text: 6-Pack
+    - text: 2-Ply
 - name: Trash Bags
   image: trash-bags.png
+  descriptions:
+    - text: Tall Kitchen Liners With Drawstring 
+    - text: 13 Gallon
+    - text: Extra Strong
+    - text: Grips The Can
 - name: Multi-Purpose Kitchen Cleaner
   image: kitchen-cleaner.jpg
+  descriptions:
+    - text: Cuts Grease
+    - text: Kills Germs
+    - text: Removes Tough Stains
+    - text: 32 Fluid Ounces
 - name: Multi-Surface Floor Cleaner
   image: floor-cleaner.jpg
+  descriptions:
+    - text: Powerful Cleaning Agent
+    - text: Powers Through Dirt And Grime
+    - text: Cleans Multiple Surfaces- Tile, Laminate, Hardwood
+    - text: 32 Fluid Ounces
 - name: Shower Cleaner
   image: shower-cleaner.jpg
-- name: Stainless Cleaner
+  descriptions:
+    - text: Daily Shower Cleaner
+    - text: Cuts Through Soap Scum
+    - text: Prevents Mildew Buildup
+    - text: Use on Tiles, Shower Curtains, and Shower Doors
+    - text: 32 Fluid Ounces
+- name: Stainless Steel Cleaner
   image: stainless-cleaner.jpg
+  descriptions:
+    - text: Cleans & Polishes
+    - text: Leaves Streak Free Shine
+    - text: Removes Fingerprints & Grime
+    - text: Use On Refrigerators, Microwaves, Stoves And More
+    - text: 32 Fluid Ounces
 - name: Tile Grout Cleaner
   image: tile-grout-cleaner.jpg
+  descriptions:
+    - text: Cuts Through Grease, Dirt, Food And Soap Scum
+    - text: Non Abrasive Formula
+    - text: Ready To Use
+    - text: Won’t Stain Tile
+    - text: 32 Fluid Ounces
 - name: Toilet Bowl Cleaner
   image: toilet-cleaner.jpg
+  descriptions:
+    - text: Cleans, Disinfects and Deodorizes
+    - text: Eliminates Odor Causing Bacteria
+    - text: Removes Stains And Whitens
+    - text: Leaves Toilets Sparking Clean
+    - text: 24 Fluid Ounces
